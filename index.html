@@ -1,82 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>College Course Feedback</title>
-  <link rel="stylesheet" href="styles.css" />
+<meta charset="UTF-8">
+<title>Document</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="style.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css?family=Major+Mono+Display|Raleway" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Major+Mono+Display|Sniglet" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Margarine" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
 </head>
 <body>
-  <main class="container">
-    <h1>Course Feedback</h1>
-    <p class="intro">Please provide your feedback for the course and instructor. Your responses help us improve the program.</p>
+<div class="top">
+   <div class="container">
+      <div id="bar">
+          <i class="fas fa-address-book"></i>
+       Address Book 
+      </div>
+   </div> 
+</div>
 
-    <form id="feedback-form" autocomplete="off" novalidate>
-      <fieldset>
-        <legend>Student Details</legend>
 
-        <label for="student-name">Full Name</label>
-        <input type="text" id="student-name" name="studentName" placeholder="Your name" required />
+<div class="container add">
+   <div class="quickadd"> <button type="button" class="btn btn-secondary" id="QuickAdd"><div id="content"><i class="fas fa-user-plus" id="new"></i>Add new Contact</div></button><hr></div>
+   
+   
+   <!-- FORM -->
+  
+  <div class="quickaddForm" id="fform">
+  <form>
+    <h3> Please enter the details!</h3>
+    
+    
+    <br/>
+    
 
-        <label for="student-id">Student ID</label>
-        <input type="text" id="student-id" name="studentId" placeholder="e.g., 2023-12345" required />
-      </fieldset>
+			<div class="row">
+            <div class="col-md-3"><label for="fullname" id="unq" >Name</label>
+            </div>
+            <div class="col-md-5">
+            <input type="text" id="fullname" class="formFields" placeholder="Kunal Aggarwal" onkeyup="return fnccopytext()">
+            </div>
+            </div>
+        
+		    
+		    <div class="row">
+            <div class="col-md-3"><label for="phone" id="unq1">Phone</label>
+            </div>
+            <div class="col-md-5">
+            <input type="text" id="phone" class="formFields" placeholder="+91 XXXXXXXXXX" onkeyup="return fnccopytext1()">
+            </div>
+            </div>
+            
+            <div class="row">
+            <div class="col-3">
+            <label for="address" id="unq2">Address</label>
+            </div>
+            <div class="col-5">
+            <textarea id="address" name="subject" placeholder="19/203 , Vasundhra , New Delhi" style="height:100px" onkeyup="return fnccopytext2()"></textarea>
+            </div>   
+            </div> 
 
-      <fieldset>
-        <legend>Course & Instructor</legend>
+		    <div class="row">
+            <div class="col-md-3"><label for="city" id="unq3">City</label>
+            </div>
+            <div class="col-md-5">
+            <input type="text" id="city" class="formFields" placeholder="Ghaziabad" onkeyup="return fnccopytext3()">
+            </div>
+            </div>
+            
+            <div class="row">
+            <div class="col-md-3"><label for="email" id="unq4">Email</label>
+            </div>
+            <div class="col-md-5">
+            <input type="text" id="email" class="formFields" placeholder="xyz@gmail.com" onkeyup="return fnccopytext4()">
+            </div>
+            </div>
+            
+            
+            <label id="cp"> </label>
+            
+            
 
-        <label for="course-name">Course Name</label>
-        <input type="text" id="course-name" name="courseName" placeholder="e.g., Intro to Computer Science" required />
+			
+			<br><br>
+			
+			<button type="submit" class="btn btn-secondary" id="Add"> Add </button>
+			<button type="submit" class="btn btn-secondary" id="Cancel"> Cancel </button>
 
-        <label for="instructor-name">Instructor</label>
-        <input type="text" id="instructor-name" name="instructorName" placeholder="Instructor's name" required />
-      </fieldset>
+  
+  </form>
+  </div>
+    
 
-      <fieldset>
-        <legend>Course Evaluation</legend>
 
-        <label for="course-rating">Course Rating</label>
-        <div class="rating" aria-label="Course rating">
-          <input type="radio" id="rate-5" name="courseRating" value="5" /><label for="rate-5">5</label>
-          <input type="radio" id="rate-4" name="courseRating" value="4" /><label for="rate-4">4</label>
-          <input type="radio" id="rate-3" name="courseRating" value="3" /><label for="rate-3">3</label>
-          <input type="radio" id="rate-2" name="courseRating" value="2" /><label for="rate-2">2</label>
-          <input type="radio" id="rate-1" name="courseRating" value="1" /><label for="rate-1">1</label>
-        </div>
 
-        <label for="course-content">What aspects of the course were most useful?</label>
-        <textarea id="course-content" name="courseContent" rows="4" placeholder="Describe useful topics, materials, or activities..."></textarea>
-      </fieldset>
 
-      <fieldset>
-        <legend>Instructor Feedback</legend>
+</div>
 
-        <label for="instructor-content">Feedback for Instructor</label>
-        <textarea id="instructor-content" name="instructorContent" rows="4" placeholder="Provide constructive feedback, strengths, and suggestions..."></textarea>
 
-        <label for="instructor-suggestions">Suggestions for improvement</label>
-        <textarea id="instructor-suggestions" name="instructorSuggestions" rows="3" placeholder="Any specific changes you'd recommend..."></textarea>
-      </fieldset>
+<!-- Display -->
 
-      <fieldset>
-        <legend>Additional Comments</legend>
+   <div class="container">
+    <div class="addbook">
+    
+			
+    
+       </div>
+</div>
 
-        <label for="additional-comments">Comments</label>
-        <textarea id="additional-comments" name="additionalComments" rows="4" placeholder="Other thoughts or concerns..."></textarea>
-      </fieldset>
 
-      <button type="submit" class="btn-submit">Submit Feedback</button>
-      <button type="button" class="btn-clear" id="clear-btn">Clear</button>
-    </form>
 
-    <section id="status" aria-live="polite" class="status" hidden></section>
 
-    <section id="saved-feedback" class="saved" aria-label="Saved feedback" hidden>
-      <h2>Previous Submissions</h2>
-      <ul id="feedback-list"></ul>
-    </section>
-  </main>
 
-  <script src="script.js"></script>
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="func.js"></script>
 </body>
 </html>

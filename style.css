@@ -1,129 +1,270 @@
-/* Reset Styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
+body{
+background: #232526;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #414345, #232526);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #414345, #232526); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 }
 
-/* Header */
-.header {
-    width: 100%;
-    background: #4e342e;
-    color: white;
-    padding: 15px 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: fixed;
-    top: 0;
-    z-index: 100;
+.top{
+background-color: #202020;
+font-family: 'Major Mono Display', monospace;
+color: white;
 }
 
-.logo {
-    font-size: 24px;
-    font-weight: bold;
+.container{
+padding-top: 10px;
+padding-bottom: 10px;
+font-size: 2rem;
 }
 
-.nav a {
-    color: white;
-    margin: 0 15px;
-    text-decoration: none;
-    font-weight: bold;
+.quickadd{
+font-size: 1rem;
+font-family: 'Raleway', sans-serif;
+margin-top: 5px;
 }
 
-.nav a:hover {
-    color: #ffcc80;
+#new {
+margin-right: 12px;
+margin-left: 5px;
+
 }
 
-/* Hero Section */
-.hero {
-    background: url('https://i.ibb.co/XWVdDkp/coffee.jpg') center/cover no-repeat;
-    height: 90vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+#content{
+    margin: 6px;
+}
+
+#QuickAdd{
+border-radius: 5px;
+color: white;
+background-color: #303030;
+border: none;
+width: 200px;
+transition: all 0.5s;
+
+}
+
+#QuickAdd:hover{
+background: #c31432;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #240b36, #c31432);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #240b36, #c31432); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */;
+width: 240px;     
+    
+    
+}
+
+hr {
+border: 0;
+height: 1px;
+background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
+
+/* FORM COM. STYLING */
+
+.quickaddForm {
+    
+    padding:10px;
+    background:rgb(240,240,240);
+    margin-top: 70px;
+    background: #536976;  /* fallback for old browsers */
+    background: rgba(0,0,0,0.6);
+    max-width: 70%;
+    color: aliceblue;
+    border-radius: 12px;
+    margin: auto;
+    overflow: hidden;
+    display: none;
+    
+    
+}
+
+
+#Add,#Cancel {
+   
+    margin-left: 20px;
+    margin-bottom: 15px;
+    
+    left:300px;
+  
+    border-radius:5px;
+    border: none;
+    width: 70px;
+    transition: width 0.5s;
+}
+
+
+h3 {
     text-align: center;
-    color: white;
-    padding: 20px;
-}
-
-.hero-text h1 {
-    font-size: 50px;
-    margin-bottom: 10px;
-}
-
-.hero-text p {
-    font-size: 20px;
-}
-
-.btn {
+    font-family: 'Major Mono Display', monospace;
+    font-weight: 200;
+    font-size: 2.5rem;
     margin-top: 20px;
-    display: inline-block;
-    padding: 12px 25px;
-    background: #ffcc80;
-    color: #4e342e;
-    border-radius: 6px;
-    text-decoration: none;
-    font-weight: bold;
+
 }
 
-.btn:hover {
-    background: #ffe0b2;
-}
-
-/* Menu Section */
-.menu {
-    padding: 60px 20px;
-    text-align: center;
-    background: #fff8e1;
-}
-
-.menu-container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px;
-    margin-top: 30px;
-}
-
-.item {
-    background: white;
-    width: 220px;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-.item h3 {
-    color: #4e342e;
-}
-
-.item span {
-    display: block;
-    margin-top: 10px;
-    font-weight: bold;
-    color: #4e342e;
-}
-
-/* About Section */
-.about {
-    padding: 60px 20px;
-    text-align: center;
-    background: #efebe9;
-}
-
-/* Contact Section */
-.contact {
-    padding: 60px 20px;
-    text-align: center;
-}
-
-/* Footer */
-.footer {
-    background: #4e342e;
+label {
+    font-family: 'Sniglet', cursive;
+    font-size: 1.6rem;
     color: white;
-    text-align: center;
-    padding: 15px;
+    transition: color 1s;
 }
 
+input{
+    margin-bottom:  25px;
+    width: 100%;
+    color: white;
+
+    border : 0px;
+    background: rgba(0,0,0,0.1);
+    border-bottom: 2px;
+    border-bottom-color: aliceblue;
+    
+    height: 26px;
+    font-size: 16px;
+
+}
+
+textarea {
+    margin-bottom: 25px;
+    width: 100%;
+    background: rgba(0,0,0,0.1);
+    color: white;
+    border: 0px;
+    font-size: 16px;
+}
+
+form {
+    padding: 25px;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: rgba(192,192,192,0.5);
+    font-size: 15px;
+
+}
+
+input:focus {
+    outline:none;
+}
+
+textarea:focus{
+    outline:none;
+}
+
+select:focus{
+    outline: none;
+}
+
+button {
+    color: #4F4949;
+}
+
+option {
+    background-color: black;
+}
+
+#Add:hover{
+    background: #52c234;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to left, #061700, #52c234);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to left, #061700, #52c234); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */;
+    width: 100px;
+    
+
+
+}
+
+#Cancel:hover{
+ background: #333333;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to left, #dd1818, #333333);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to left, #dd1818, #333333); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+   width:100px;
+}
+
+
+
+
+.entry {
+    background-color: #303030;
+    height:50px;
+    border-bottom:1px solid;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 15px;
+    color: white;
+     transition: color 1.1s;
+}
+
+
+.entry .name {
+    width:160px;
+    float:left;
+    padding:7px;
+    margin-top: 4px;
+}
+
+.entry .email {
+    width:200px;
+    float:left;
+    padding:7px;
+     margin-top: 4px;
+}
+
+
+.entry .phone {
+    width:160px;
+    float:left;
+    padding:7px;
+     margin-top: 4px;
+}
+
+.entry .address {
+    width:300px;
+    float:left;
+    padding:7px;
+     margin-top: 4px;
+}
+
+.entry .city {
+    width:160px;
+    float:left;
+    padding:7px;
+     margin-top: 4px;
+}
+
+.entry .del {
+    width:70px;
+    float:left;
+    padding:7px;
+    margin-left: 20px;
+     margin-top: 4px;
+}
+
+
+.entry .del a {
+    font-family:sans-serif;
+    color:white;
+    font-size:12px;
+    padding:5px;
+    background:black;
+    border-radius:2px;
+    text-decoration:none;
+    
+}
+
+.delbutton{
+    padding: 9px;
+}
+
+#cp{
+    color: aliceblue;
+    font-family: 'Poppins', sans-serif;
+}
+#bar{
+    color: white;
+    transition: color 1.1s;
+}
+#bar:hover{
+    color: crimson;
+}
+
+label:hover{
+    color: crimson;
+}
