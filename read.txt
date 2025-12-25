@@ -1,0 +1,6 @@
+
+(base) C:\Users\vaish>conda activate brain
+
+(brain) C:\Users\vaish>cd C:\Users\vaish\OneDrive\Desktop\Brain_Tumor_Detection-main
+
+(brain) C:\Users\vaish\OneDrive\Desktop\Brain_Tumor_Detection-main>python app.py
