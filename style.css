@@ -1,0 +1,129 @@
+/* Reset Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Header */
+.header {
+    width: 100%;
+    background: #4e342e;
+    color: white;
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.nav a:hover {
+    color: #ffcc80;
+}
+
+/* Hero Section */
+.hero {
+    background: url('https://i.ibb.co/XWVdDkp/coffee.jpg') center/cover no-repeat;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    padding: 20px;
+}
+
+.hero-text h1 {
+    font-size: 50px;
+    margin-bottom: 10px;
+}
+
+.hero-text p {
+    font-size: 20px;
+}
+
+.btn {
+    margin-top: 20px;
+    display: inline-block;
+    padding: 12px 25px;
+    background: #ffcc80;
+    color: #4e342e;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.btn:hover {
+    background: #ffe0b2;
+}
+
+/* Menu Section */
+.menu {
+    padding: 60px 20px;
+    text-align: center;
+    background: #fff8e1;
+}
+
+.menu-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.item {
+    background: white;
+    width: 220px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.item h3 {
+    color: #4e342e;
+}
+
+.item span {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+    color: #4e342e;
+}
+
+/* About Section */
+.about {
+    padding: 60px 20px;
+    text-align: center;
+    background: #efebe9;
+}
+
+/* Contact Section */
+.contact {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+/* Footer */
+.footer {
+    background: #4e342e;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
