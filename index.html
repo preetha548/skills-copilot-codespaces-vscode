@@ -1,127 +1,87 @@
+html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Document</title>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-<link rel="stylesheet" type="text/css" href="style.css">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link href="https://fonts.googleapis.com/css?family=Major+Mono+Display|Raleway" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Major+Mono+Display|Sniglet" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Margarine" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sponsorship Form</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-<div class="top">
-   <div class="container">
-      <div id="bar">
-          <i class="fas fa-address-book"></i>
-       Address Book 
+  <main class="container">
+    <h1>Sponsorship Form</h1>
+    <p class="lead">Please fill out this form to become a sponsor. We’ll contact you to confirm details.</p>
+
+    <form id="sponsorForm" novalidate>
+      <div class="grid">
+        <!-- Sponsor Name -->
+        <div class="field">
+          <label for="name">Sponsor Name <span aria-label="required" class="required">*</span></label>
+          <input type="text" id="name" name="name" required placeholder="Your name or organization name" />
+          <span class="error" aria-live="polite"></span>
+        </div>
+
+        <!-- Email -->
+        <div class="field">
+          <label for="email">Email <span aria-label="required" class="required">*</span></label>
+          <input type="email" id="email" name="email" required placeholder="you@example.com" />
+          <span class="error" aria-live="polite"></span>
+        </div>
+
+        <!-- Website -->
+        <div class="field">
+          <label for="website">Website</label>
+          <input type="url" id="website" name="website" placeholder="https://example.org" />
+        </div>
+
+        <!-- Organization -->
+        <div class="field">
+          <label for="organization">Organization</label>
+          <input type="text" id="organization" name="organization" placeholder="Your organization (optional)" />
+        </div>
+
+        <!-- Level -->
+        <div class="field">
+          <label for="level">Sponsorship Level</label>
+          <select id="level" name="level" required>
+            <option value="" disabled selected>Select a level</option>
+            <option value="platinum">Platinum - $10,000+</option>
+            <option value="gold">Gold - $5,000</option>
+            <option value="silver">Silver - $1,000</option>
+            <option value="bronze">Bronze - $500</option>
+          </select>
+          <span class="error" aria-live="polite"></span>
+        </div>
+
+        <!-- Amount (if custom) -->
+        <div class="field">
+          <label for="amount">Custom Amount (optional)</label>
+          <input type="number" id="amount" name="amount" min="1" step="1" placeholder="Enter amount in USD" />
+        </div>
+
+        <!-- Message -->
+        <div class="field full-width">
+          <label for="message">Message to the Sponsor Team</label>
+          <textarea id="message" name="message" rows="4" placeholder="Optional: share goals, event details, or branding needs"></textarea>
+        </div>
+
+        <!-- Agreement -->
+        <div class="field full-width checkbox-row">
+          <input type="checkbox" id="agree" required />
+          <label for="agree">I agree to the terms and privacy policy.</label>
+          <span class="error" aria-live="polite"></span>
+        </div>
       </div>
-   </div> 
-</div>
 
+      <div class="form-actions">
+        <button type="submit" class="btn-primary">Submit Sponsorship</button>
+        <button type="reset" class="btn-secondary">Reset</button>
+      </div>
 
-<div class="container add">
-   <div class="quickadd"> <button type="button" class="btn btn-secondary" id="QuickAdd"><div id="content"><i class="fas fa-user-plus" id="new"></i>Add new Contact</div></button><hr></div>
-   
-   
-   <!-- FORM -->
-  
-  <div class="quickaddForm" id="fform">
-  <form>
-    <h3> Please enter the details!</h3>
-    
-    
-    <br/>
-    
+      <p id="formStatus" class="form-status" aria-live="polite"></p>
+    </form>
+  </main>
 
-			<div class="row">
-            <div class="col-md-3"><label for="fullname" id="unq" >Name</label>
-            </div>
-            <div class="col-md-5">
-            <input type="text" id="fullname" class="formFields" placeholder="Kunal Aggarwal" onkeyup="return fnccopytext()">
-            </div>
-            </div>
-        
-		    
-		    <div class="row">
-            <div class="col-md-3"><label for="phone" id="unq1">Phone</label>
-            </div>
-            <div class="col-md-5">
-            <input type="text" id="phone" class="formFields" placeholder="+91 XXXXXXXXXX" onkeyup="return fnccopytext1()">
-            </div>
-            </div>
-            
-            <div class="row">
-            <div class="col-3">
-            <label for="address" id="unq2">Address</label>
-            </div>
-            <div class="col-5">
-            <textarea id="address" name="subject" placeholder="19/203 , Vasundhra , New Delhi" style="height:100px" onkeyup="return fnccopytext2()"></textarea>
-            </div>   
-            </div> 
-
-		    <div class="row">
-            <div class="col-md-3"><label for="city" id="unq3">City</label>
-            </div>
-            <div class="col-md-5">
-            <input type="text" id="city" class="formFields" placeholder="Ghaziabad" onkeyup="return fnccopytext3()">
-            </div>
-            </div>
-            
-            <div class="row">
-            <div class="col-md-3"><label for="email" id="unq4">Email</label>
-            </div>
-            <div class="col-md-5">
-            <input type="text" id="email" class="formFields" placeholder="xyz@gmail.com" onkeyup="return fnccopytext4()">
-            </div>
-            </div>
-            
-            
-            <label id="cp"> </label>
-            
-            
-
-			
-			<br><br>
-			
-			<button type="submit" class="btn btn-secondary" id="Add"> Add </button>
-			<button type="submit" class="btn btn-secondary" id="Cancel"> Cancel </button>
-
-  
-  </form>
-  </div>
-    
-
-
-
-
-</div>
-
-
-<!-- Display -->
-
-   <div class="container">
-    <div class="addbook">
-    
-			
-    
-       </div>
-</div>
-
-
-
-
-
-
-
-
-
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-<script src="func.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
