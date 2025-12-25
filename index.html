@@ -1,64 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Baby Towels Shop</title>
-  <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bike Riding Vlog</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        /* Hero section */
+        .hero {
+            background: url('https://images.pexels.com/photos/100582/pexels-photo-100582.jpeg') center/cover no-repeat;
+            height: 90vh;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+        }
+
+        /* Gallery image styling */
+        .gallery-img {
+            height: 250px;
+            object-fit: cover;
+        }
+
+        footer {
+            background: #222;
+            color: #ccc;
+            padding: 20px 0;
+            text-align: center;
+        }
+    </style>
 </head>
+
 <body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <h1 class="logo">BabySoft Towels</h1>
-      <nav class="nav">
-        <a href="#products">Products</a>
-        <a href="#cart">Cart</a>
-        <a href="#contact">Contact</a>
-      </nav>
-      <div class="cart-icon" id="cartButton" title="Open cart">
-        🧺 <span class="cart-count" id="cartCount">0</span>
-      </div>
-    </div>
-  </header>
 
-  <section class="hero container" id="home">
-    <div class="hero-content">
-      <h2>Soft, plush towels for your little one</h2>
-      <p>Premium baby towels made with gentle, absorbent fabric. Perfect for bath time and swaddling fun.</p>
-      <button class="btn" id="shopNow">Shop Now</button>
-    </div>
-  </section>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Bike Vlog</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#video">Vlog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-  <section class="container" id="products">
-    <h2 class="section-title">Popular Baby Towels</h2>
-    <div class="grid" id="productGrid">
-      <!-- Products will be injected here by JS -->
-    </div>
-  </section>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div>
+            <h1>Bike Riding Adventure</h1>
+            <p>Join me on thrilling biking journeys through nature, trails and mountains!</p>
+        </div>
+    </section>
 
-  <!-- Cart Drawer -->
-  <aside class="cart-drawer" id="cartDrawer" aria-hidden="true">
-    <div class="drawer-header">
-      <h3>Your Cart</h3>
-      <button class="close-btn" id="closeCart" aria-label="Close cart">✕</button>
-    </div>
-    <div class="drawer-content" id="drawerContent">
-      <p class="empty" id="emptyCart">Your cart is empty.</p>
-      <ul class="cart-items" id="cartItems"></ul>
-    </div>
-    <div class="drawer-footer">
-      <div class="total">
-        <span>Total:</span>
-        <strong id="cartTotal">$0.00</strong>
-      </div>
-      <button class="btn primary" id="checkoutBtn">Checkout</button>
-    </div>
-  </aside>
+    <!-- Video Section -->
+    <section id="video" class="container my-5">
+        <h2 class="text-center mb-4">My Latest Vlog</h2>
+        <div class="ratio ratio-16x9">
+            <iframe src="https://www.youtube.com/embed/VIDEO_ID" 
+                    title="YouTube video" allowfullscreen></iframe>
+        </div>
+    </section>
 
-  <footer id="contact" class="container footer">
-    <p>&copy; 2025 BabySoft Towels. All rights reserved.</p>
-  </footer>
+    <!-- Photo Gallery -->
+    <section id="gallery" class="container my-5">
+        <h2 class="text-center mb-4">Ride Gallery</h2>
 
-  <script src="script.js"></script>
+        <div class="row g-3">
+            <div class="col-md-4">
+                <img src="https://images.pexels.com/photos/100582/pexels-photo-100582.jpeg"
+                     class="img-fluid gallery-img rounded" alt="">
+            </div>
+
+            <div class="col-md-4">
+                <img src="https://images.pexels.com/photos/258045/pexels-photo-258045.jpeg"
+                     class="img-fluid gallery-img rounded" alt="">
+            </div>
+
+            <div class="col-md-4">
+                <img src="https://images.pexels.com/photos/1005824/pexels-photo-1005824.jpeg"
+                     class="img-fluid gallery-img rounded" alt="">
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="container my-5">
+        <h2 class="text-center mb-3">About My Bike Rides</h2>
+        <p class="text-center fs-5">
+            I document my biking experiences to share the peace, thrill, and excitement 
+            of exploring scenic roads and mountain trails. Every vlog captures a unique 
+            journey full of nature, adventure, and pure biking passion.
+        </p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 Bike Riding Vlog | All Rights Reserved</p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>
