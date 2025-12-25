@@ -1,124 +1,64 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KVS Time Table</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-        h2 {
-            text-align: center;
-            color: #003366;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
-        table, th, td {
-            border: 1px solid #333;
-        }
-        th {
-            background-color: #f2f2f2;
-            padding: 10px;
-        }
-        td {
-            padding: 8px;
-            text-align: center;
-        }
-        .break {
-            background-color: #ffe4b5;
-            font-weight: bold;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Baby Towels Shop</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <h1 class="logo">BabySoft Towels</h1>
+      <nav class="nav">
+        <a href="#products">Products</a>
+        <a href="#cart">Cart</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="cart-icon" id="cartButton" title="Open cart">
+        🧺 <span class="cart-count" id="cartCount">0</span>
+      </div>
+    </div>
+  </header>
 
-    <h2>Kendriya Vidyalaya – Class Time Table</h2>
+  <section class="hero container" id="home">
+    <div class="hero-content">
+      <h2>Soft, plush towels for your little one</h2>
+      <p>Premium baby towels made with gentle, absorbent fabric. Perfect for bath time and swaddling fun.</p>
+      <button class="btn" id="shopNow">Shop Now</button>
+    </div>
+  </section>
 
-    <table>
-        <tr>
-            <th>Day</th>
-            <th>8:00–9:00</th>
-            <th>9:00–10:00</th>
-            <th>10:00–10:30</th>
-            <th>10:30–11:30</th>
-            <th>11:30–12:30</th>
-            <th>12:30–1:00</th>
-            <th>1:00–2:00</th>
-        </tr>
+  <section class="container" id="products">
+    <h2 class="section-title">Popular Baby Towels</h2>
+    <div class="grid" id="productGrid">
+      <!-- Products will be injected here by JS -->
+    </div>
+  </section>
 
-        <tr>
-            <td>Monday</td>
-            <td>Maths</td>
-            <td>English</td>
-            <td class="break">Break</td>
-            <td>Science</td>
-            <td>Hindi</td>
-            <td class="break">Lunch</td>
-            <td>Games</td>
-        </tr>
+  <!-- Cart Drawer -->
+  <aside class="cart-drawer" id="cartDrawer" aria-hidden="true">
+    <div class="drawer-header">
+      <h3>Your Cart</h3>
+      <button class="close-btn" id="closeCart" aria-label="Close cart">✕</button>
+    </div>
+    <div class="drawer-content" id="drawerContent">
+      <p class="empty" id="emptyCart">Your cart is empty.</p>
+      <ul class="cart-items" id="cartItems"></ul>
+    </div>
+    <div class="drawer-footer">
+      <div class="total">
+        <span>Total:</span>
+        <strong id="cartTotal">$0.00</strong>
+      </div>
+      <button class="btn primary" id="checkoutBtn">Checkout</button>
+    </div>
+  </aside>
 
-        <tr>
-            <td>Tuesday</td>
-            <td>Science</td>
-            <td>Maths</td>
-            <td class="break">Break</td>
-            <td>Social Science</td>
-            <td>English</td>
-            <td class="break">Lunch</td>
-            <td>Art</td>
-        </tr>
+  <footer id="contact" class="container footer">
+    <p>&copy; 2025 BabySoft Towels. All rights reserved.</p>
+  </footer>
 
-        <tr>
-            <td>Wednesday</td>
-            <td>Hindi</td>
-            <td>Computer</td>
-            <td class="break">Break</td>
-            <td>Maths</td>
-            <td>Science</td>
-            <td class="break">Lunch</td>
-            <td>Library</td>
-        </tr>
-
-        <tr>
-            <td>Thursday</td>
-            <td>English</td>
-            <td>Social Science</td>
-            <td class="break">Break</td>
-            <td>Hindi</td>
-            <td>Maths</td>
-            <td class="break">Lunch</td>
-            <td>Games</td>
-        </tr>
-
-        <tr>
-            <td>Friday</td>
-            <td>Computer</td>
-            <td>Science</td>
-            <td class="break">Break</td>
-            <td>English</td>
-            <td>Social Science</td>
-            <td class="break">Lunch</td>
-            <td>Art</td>
-        </tr>
-
-        <tr>
-            <td>Saturday</td>
-            <td>Sports</td>
-            <td>Music</td>
-            <td class="break">Break</td>
-            <td>Workshop</td>
-            <td>Yoga</td>
-            <td class="break">Lunch</td>
-            <td>Club Activities</td>
-        </tr>
-
-    </table>
-
+  <script src="script.js"></script>
 </body>
 </html>
