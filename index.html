@@ -1,87 +1,52 @@
-html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Sponsorship Form</title>
-  <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8">
+    <title>Japanese Cheesecake</title>
+
+    <!-- Background color using RGB -->
+    <style>
+        body {
+            background-color: rgb(255, 248, 240); /* soft cream color */
+        }
+    </style>
 </head>
 <body>
-  <main class="container">
-    <h1>Sponsorship Form</h1>
-    <p class="lead">Please fill out this form to become a sponsor. We’ll contact you to confirm details.</p>
 
-    <form id="sponsorForm" novalidate>
-      <div class="grid">
-        <!-- Sponsor Name -->
-        <div class="field">
-          <label for="name">Sponsor Name <span aria-label="required" class="required">*</span></label>
-          <input type="text" id="name" name="name" required placeholder="Your name or organization name" />
-          <span class="error" aria-live="polite"></span>
-        </div>
+    <h1>🍰 Japanese Cheesecake</h1>
 
-        <!-- Email -->
-        <div class="field">
-          <label for="email">Email <span aria-label="required" class="required">*</span></label>
-          <input type="email" id="email" name="email" required placeholder="you@example.com" />
-          <span class="error" aria-live="polite"></span>
-        </div>
+    <p>
+        Japanese cheesecake is soft, fluffy, and light.
+        It is different from regular cheesecake because it
+        has a soufflé-like texture.
+    </p>
 
-        <!-- Website -->
-        <div class="field">
-          <label for="website">Website</label>
-          <input type="url" id="website" name="website" placeholder="https://example.org" />
-        </div>
+    <h2>Ingredients</h2>
+    <ul>
+        <li>Cream cheese – 250g</li>
+        <li>Milk – 100ml</li>
+        <li>Butter – 50g</li>
+        <li>Eggs – 6</li>
+        <li>Sugar – 140g</li>
+        <li>Cake flour – 60g</li>
+    </ul>
 
-        <!-- Organization -->
-        <div class="field">
-          <label for="organization">Organization</label>
-          <input type="text" id="organization" name="organization" placeholder="Your organization (optional)" />
-        </div>
+    <h2>Steps</h2>
+    <ol>
+        <li>Melt cream cheese, milk, and butter</li>
+        <li>Add egg yolks and flour</li>
+        <li>Whip egg whites with sugar</li>
+        <li>Fold gently and bake</li>
+    </ol>
 
-        <!-- Level -->
-        <div class="field">
-          <label for="level">Sponsorship Level</label>
-          <select id="level" name="level" required>
-            <option value="" disabled selected>Select a level</option>
-            <option value="platinum">Platinum - $10,000+</option>
-            <option value="gold">Gold - $5,000</option>
-            <option value="silver">Silver - $1,000</option>
-            <option value="bronze">Bronze - $500</option>
-          </select>
-          <span class="error" aria-live="polite"></span>
-        </div>
+    <h2>Image</h2>
+    <img src="https://images.unsplash.com/photo-1601972599720-36938d4ecd31"
+         alt="Japanese Cheesecake"
+         width="300">
 
-        <!-- Amount (if custom) -->
-        <div class="field">
-          <label for="amount">Custom Amount (optional)</label>
-          <input type="number" id="amount" name="amount" min="1" step="1" placeholder="Enter amount in USD" />
-        </div>
+    <hr>
 
-        <!-- Message -->
-        <div class="field full-width">
-          <label for="message">Message to the Sponsor Team</label>
-          <textarea id="message" name="message" rows="4" placeholder="Optional: share goals, event details, or branding needs"></textarea>
-        </div>
+    <p>Made using only HTML</p>
 
-        <!-- Agreement -->
-        <div class="field full-width checkbox-row">
-          <input type="checkbox" id="agree" required />
-          <label for="agree">I agree to the terms and privacy policy.</label>
-          <span class="error" aria-live="polite"></span>
-        </div>
-      </div>
-
-      <div class="form-actions">
-        <button type="submit" class="btn-primary">Submit Sponsorship</button>
-        <button type="reset" class="btn-secondary">Reset</button>
-      </div>
-
-      <p id="formStatus" class="form-status" aria-live="polite"></p>
-    </form>
-  </main>
-
-  <script src="script.js"></script>
 </body>
 </html>
