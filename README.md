@@ -1,7 +1,7 @@
 
-  # Storytelling App
+  # Social Media Dashboard
 
-  This is a code bundle for Storytelling App. The original project is available at https://www.figma.com/design/UtZvUo8Vv4lJqI5QIV1fmK/Storytelling-App.
+  This is a code bundle for Social Media Dashboard. The original project is available at https://www.figma.com/design/95QfAUXOLmungIf3LdHXLS/Social-Media-Dashboard.
 
   ## Running the code
 
