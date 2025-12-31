@@ -1,7 +1,7 @@
 
-  # Social Media Dashboard
+  # Fashion Designing Website
 
-  This is a code bundle for Social Media Dashboard. The original project is available at https://www.figma.com/design/95QfAUXOLmungIf3LdHXLS/Social-Media-Dashboard.
+  This is a code bundle for Fashion Designing Website. The original project is available at https://www.figma.com/design/WnFpKjcb3uY9zB77KqZ4fC/Fashion-Designing-Website.
 
   ## Running the code
 
