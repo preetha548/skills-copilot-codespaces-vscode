@@ -1,7 +1,7 @@
 
-  # Fashion Designing Website
+  # Gents Salon
 
-  This is a code bundle for Fashion Designing Website. The original project is available at https://www.figma.com/design/WnFpKjcb3uY9zB77KqZ4fC/Fashion-Designing-Website.
+  This is a code bundle for Gents Salon. The original project is available at https://www.figma.com/design/N8GBObc5bkYbOe4fsQx3oo/Gents-Salon.
 
   ## Running the code
 
