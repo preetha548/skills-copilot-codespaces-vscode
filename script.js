@@ -1,54 +1,27 @@
-$(function(){
-    var $root = $('html, body');
-$('a').click(function(){
-    $root.animate({
-       scrollTop: $($.attr(this, 'href')).offset().top
-    }, 800);
-    return false;
-});
-$(document).on('scroll', function(){
-    if($(this).scrollTop() > 185){
-        $('nav').addClass('nav-sticky');
-    }else{
-        $('nav').removeClass('nav-sticky');
-    }
-});
-$('nav li a').click(function(){
-    $('nav li a').removeClass('active');
-    $(this).addClass('active');
-});
-$('nav li a').scroll(function(){
-    $('nav li a').removeClass('active');
-    $(this).addClass('active');
-});
-$(function(){
-    //Smooth scroll
-    var $root = $('html, body');
-    $('a').click(function(){
-       $root.animate({
-          scrollTop: $($.attr(this, 'href')).offset().top
-       }, 800);
-      return false;
-    });
+const medicationForm = document.getElementById('medication-form');
+medicationForm.addEventListener('submit', addMedication);
 
-   //Sticky navigation on scroll.
-      $(document).on('scroll', function(){
-        if($(this).scrollTop() > 185){
-            $('nav').addClass('nav-sticky');
-        }else{
-            $('nav').removeClass('nav-sticky');
-        }
-    });
-    //Add active class to the nav on click.
-    $('nav li a').click(function(){
-    $('nav li a').removeClass('active');
-    $(this).addClass('active');
-    });
+function addMedication(e) {
+    e.preventDefault();
+    const medicationName = document.getElementById('medication-name').value;
+    const medicationDosage = document.getElementById('medication-dosage').value;
+    const medicationList = document.getElementById('medication-list');
+    const li = document.createElement('li');
+    li.innerText = `${medicationName} - ${medicationDosage}`;
+    medicationList.appendChild(li);
+    medicationForm.reset();
+}
 
-    $('nav li a').scroll(function(){
-    $('nav li a').removeClass('active');
-    $(this).addClass('active');
-    });
+const reminderForm = document.getElementById('reminder-form');
+reminderForm.addEventListener('submit', addReminder);
 
-});
-
+function addReminder(e) {
+    e.preventDefault();
+    const reminderName = document.getElementById('reminder-name').value;
+    const reminderTime = document.getElementById('reminder-time').value;
+    const reminderList = document.getElementById('reminder-list');
+    const li = document.createElement('li');
+    li.innerText = `${reminderName} - ${reminderTime}`;
+    reminderList.appendChild(li);
+    reminderForm.reset();
+}
