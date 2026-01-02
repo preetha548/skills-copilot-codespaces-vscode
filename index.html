@@ -1,0 +1,87 @@
+html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sponsorship Form</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="container">
+    <h1>Sponsorship Form</h1>
+    <p class="lead">Please fill out this form to become a sponsor. We’ll contact you to confirm details.</p>
+
+    <form id="sponsorForm" novalidate>
+      <div class="grid">
+        <!-- Sponsor Name -->
+        <div class="field">
+          <label for="name">Sponsor Name <span aria-label="required" class="required">*</span></label>
+          <input type="text" id="name" name="name" required placeholder="Your name or organization name" />
+          <span class="error" aria-live="polite"></span>
+        </div>
+
+        <!-- Email -->
+        <div class="field">
+          <label for="email">Email <span aria-label="required" class="required">*</span></label>
+          <input type="email" id="email" name="email" required placeholder="you@example.com" />
+          <span class="error" aria-live="polite"></span>
+        </div>
+
+        <!-- Website -->
+        <div class="field">
+          <label for="website">Website</label>
+          <input type="url" id="website" name="website" placeholder="https://example.org" />
+        </div>
+
+        <!-- Organization -->
+        <div class="field">
+          <label for="organization">Organization</label>
+          <input type="text" id="organization" name="organization" placeholder="Your organization (optional)" />
+        </div>
+
+        <!-- Level -->
+        <div class="field">
+          <label for="level">Sponsorship Level</label>
+          <select id="level" name="level" required>
+            <option value="" disabled selected>Select a level</option>
+            <option value="platinum">Platinum - $10,000+</option>
+            <option value="gold">Gold - $5,000</option>
+            <option value="silver">Silver - $1,000</option>
+            <option value="bronze">Bronze - $500</option>
+          </select>
+          <span class="error" aria-live="polite"></span>
+        </div>
+
+        <!-- Amount (if custom) -->
+        <div class="field">
+          <label for="amount">Custom Amount (optional)</label>
+          <input type="number" id="amount" name="amount" min="1" step="1" placeholder="Enter amount in USD" />
+        </div>
+
+        <!-- Message -->
+        <div class="field full-width">
+          <label for="message">Message to the Sponsor Team</label>
+          <textarea id="message" name="message" rows="4" placeholder="Optional: share goals, event details, or branding needs"></textarea>
+        </div>
+
+        <!-- Agreement -->
+        <div class="field full-width checkbox-row">
+          <input type="checkbox" id="agree" required />
+          <label for="agree">I agree to the terms and privacy policy.</label>
+          <span class="error" aria-live="polite"></span>
+        </div>
+      </div>
+
+      <div class="form-actions">
+        <button type="submit" class="btn-primary">Submit Sponsorship</button>
+        <button type="reset" class="btn-secondary">Reset</button>
+      </div>
+
+      <p id="formStatus" class="form-status" aria-live="polite"></p>
+    </form>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
