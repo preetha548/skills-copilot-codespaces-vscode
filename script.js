@@ -1,84 +1,50 @@
-// Simple client-side validation and UX feedback
-(function() {
-  const form = document.getElementById('sponsorForm');
-  const status = document.getElementById('formStatus');
+// counter
 
-  // Basic field error helper
-  function showError(field, message) {
-    const errorEl = field.parentElement.querySelector('.error');
-    if (errorEl) errorEl.textContent = message;
-    field.setAttribute('aria-invalid', 'true');
-  }
+var num1 = setInterval(projectDone, 10)
+var count1 = 3100;
 
-  function clearError(field) {
-    const errorEl = field.parentElement.querySelector('.error');
-    if (errorEl) errorEl.textContent = '';
-    field.removeAttribute('aria-invalid');
-  }
-
-  // Clear errors on input
-  form.addEventListener('input', (e) => {
-    if (e.target.closest('.field')) {
-      clearError(e.target);
+function projectDone(){
+    count1++;
+    document.querySelector("#number1").innerHTML= count1;
+    // stop condition
+    if(count1 == 3500){
+        clearInterval(num1);
     }
-  });
+};
 
-  form.addEventListener('submit', function(e) {
-    e.preventDefault();
+var num2 = setInterval(projectDone2, 10)
+var count2 = 1500;
 
-    // Reset status
-    status.textContent = '';
-    let valid = true;
-
-    // Name
-    const name = document.getElementById('name');
-    if (!name.value.trim()) {
-      showError(name, 'Please enter a sponsor name.');
-      valid = false;
+function projectDone2(){
+    count2++;
+    document.querySelector("#number2").innerHTML= count2;
+    // stop condition
+    if(count2 == 1850){
+        clearInterval(num2);
     }
+};
 
-    // Email
-    const email = document.getElementById('email');
-    if (!email.value.trim()) {
-      showError(email, 'Please enter an email address.');
-      valid = false;
-    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) {
-      showError(email, 'Please enter a valid email address.');
-      valid = false;
+var num3 = setInterval(projectDone3, 10)
+var count3 = 1800;
+
+function projectDone3(){
+    count3++;
+    document.querySelector("#number3").innerHTML= count3;
+    // stop condition
+    if(count3 == 2100){
+        clearInterval(num3);
     }
+};
 
-    // Level
-    const level = document.getElementById('level');
-    if (!level.value) {
-      showError(level, 'Please select a sponsorship level.');
-      valid = false;
+
+var num4 = setInterval(projectDone4, 10)
+var count4 = 12;
+
+function projectDone4(){
+    count4++;
+    document.querySelector("#number4").innerHTML= count4;
+    // stop condition
+    if(count4 == 350){
+        clearInterval(num4);
     }
-
-    // Agreement
-    const agree = document.getElementById('agree');
-    if (!agree.checked) {
-      showError(agree, 'You must agree to the terms.');
-      valid = false;
-    } else {
-      // Clear any lingering error style on the checkbox label
-      const errorLabel = agree.parentElement.querySelector('.error');
-      if (errorLabel) errorLabel.textContent = '';
-    }
-
-    if (!valid) {
-      status.textContent = 'Please fix the highlighted fields and submit again.';
-      status.style.color = '#ffb86c';
-      return;
-    }
-
-    // If desired, here you would send data to a server with fetch/AJAX.
-    // Example (pseudo):
-    // const formData = new FormData(form);
-    // fetch('/api/sponsorship', { method: 'POST', body: formData }).then(...);
-
-    // Simulated successful submission
-    status.style.color = '#4ade80';
-    status.textContent = 'Thank you! Your sponsorship request has been submitted.';
-    form.reset();
-  });
-})();
+};
