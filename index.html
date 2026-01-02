@@ -1,49 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Calendar App Vanilla JS</title>
-  </head>
-  <body>
-    <div id="container">
-      <header id="header">
-        <div id="monthDisplay"></div>
-        <div id="actionButtons">
-          <button data-id="todayButton">Today</button>
-          <button data-id="backButton">Back</button>
-          <button data-id="nextButton">Next</button>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>College Course Feedback</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="container">
+    <h1>Course Feedback</h1>
+    <p class="intro">Please provide your feedback for the course and instructor. Your responses help us improve the program.</p>
+
+    <form id="feedback-form" autocomplete="off" novalidate>
+      <fieldset>
+        <legend>Student Details</legend>
+
+        <label for="student-name">Full Name</label>
+        <input type="text" id="student-name" name="studentName" placeholder="Your name" required />
+
+        <label for="student-id">Student ID</label>
+        <input type="text" id="student-id" name="studentId" placeholder="e.g., 2023-12345" required />
+      </fieldset>
+
+      <fieldset>
+        <legend>Course & Instructor</legend>
+
+        <label for="course-name">Course Name</label>
+        <input type="text" id="course-name" name="courseName" placeholder="e.g., Intro to Computer Science" required />
+
+        <label for="instructor-name">Instructor</label>
+        <input type="text" id="instructor-name" name="instructorName" placeholder="Instructor's name" required />
+      </fieldset>
+
+      <fieldset>
+        <legend>Course Evaluation</legend>
+
+        <label for="course-rating">Course Rating</label>
+        <div class="rating" aria-label="Course rating">
+          <input type="radio" id="rate-5" name="courseRating" value="5" /><label for="rate-5">5</label>
+          <input type="radio" id="rate-4" name="courseRating" value="4" /><label for="rate-4">4</label>
+          <input type="radio" id="rate-3" name="courseRating" value="3" /><label for="rate-3">3</label>
+          <input type="radio" id="rate-2" name="courseRating" value="2" /><label for="rate-2">2</label>
+          <input type="radio" id="rate-1" name="courseRating" value="1" /><label for="rate-1">1</label>
         </div>
-      </header>
 
-      <div id="weekdays">
-        <div>Sunday</div>
-        <div>Monday</div>
-        <div>Tuesday</div>
-        <div>Wednesday</div>
-        <div>Thursday</div>
-        <div>Friday</div>
-        <div>Saturday</div>
-      </div>
-      <div id="calendar"></div>
-    </div>
+        <label for="course-content">What aspects of the course were most useful?</label>
+        <textarea id="course-content" name="courseContent" rows="4" placeholder="Describe useful topics, materials, or activities..."></textarea>
+      </fieldset>
 
-    <div id="newEventModal">
-      <h2>New Event</h2>
-      <input id="eventTitleInput" placeholder="Event Title" />
-      <button id="saveButton">Save</button>
-      <button id="cancelButton">Cancel</button>
-    </div>
+      <fieldset>
+        <legend>Instructor Feedback</legend>
 
-    <div id="deleteEventModal">
-      <h2>Event</h2>
-      <p id="eventText"></p>
-      <button id="deleteButton">Delete</button>
-      <button id="closeButton">Close</button>
-    </div>
+        <label for="instructor-content">Feedback for Instructor</label>
+        <textarea id="instructor-content" name="instructorContent" rows="4" placeholder="Provide constructive feedback, strengths, and suggestions..."></textarea>
 
-    <div id="modalBackDrop"></div>
+        <label for="instructor-suggestions">Suggestions for improvement</label>
+        <textarea id="instructor-suggestions" name="instructorSuggestions" rows="3" placeholder="Any specific changes you'd recommend..."></textarea>
+      </fieldset>
 
-    <script src="./src/index.js"></script>
-  </body>
+      <fieldset>
+        <legend>Additional Comments</legend>
+
+        <label for="additional-comments">Comments</label>
+        <textarea id="additional-comments" name="additionalComments" rows="4" placeholder="Other thoughts or concerns..."></textarea>
+      </fieldset>
+
+      <button type="submit" class="btn-submit">Submit Feedback</button>
+      <button type="button" class="btn-clear" id="clear-btn">Clear</button>
+    </form>
+
+    <section id="status" aria-live="polite" class="status" hidden></section>
+
+    <section id="saved-feedback" class="saved" aria-label="Saved feedback" hidden>
+      <h2>Previous Submissions</h2>
+      <ul id="feedback-list"></ul>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
 </html>
