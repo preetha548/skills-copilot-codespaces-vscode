@@ -1,126 +1,212 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif, system-ui;
+}
+
 :root {
-  --bg: #0b1020;
-  --card: #141a2b;
-  --text: #e8eaf6;
-  --muted: #aab4d4;
-  --primary: #6c8cff;
-  --accent: #4ade80;
-  --error: #ff6b6b;
-  --radius: 12px;
+  --primary-color: #6290c8;
+  --secondary-color: #1f487e;
+  --tertiary-color: #1d3461;
+  --frost-color: #829cbc;
+  --error-color: #ec4e20;
+  --success-color: #49dcb1;
 }
 
-* { box-sizing: border-box; }
-html, body { height: 100%; margin: 0; background: linear-gradient(135deg, #0b1020 0%, #1a1a2e 60%, #0b1020 100%); color: var(--text); font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif; }
-
-.container {
-  max-width: 900px;
-  margin: 4rem auto;
-  padding: 1rem;
+body {
+  background: linear-gradient(var(--primary-color), var(--secondary-color));
+  background-repeat: no-repeat;
+  min-height: 100vh;
 }
 
-h1 { font-size: 2rem; margin-bottom: 0.25rem; }
-
-.lead { color: var(--muted); margin-bottom: 1.25rem; }
-
-.form-status { margin-top: 0.75rem; min-height: 1.25em; color: var(--accent); }
-
-form {
-  background: rgba(20, 26, 43, 0.9);
-  border: 1px solid rgba(108, 140, 255, 0.25);
-  border-radius: var(--radius);
-  padding: 1.25rem;
-  box-shadow: 0 10px 25px rgba(0,0,0,.25);
+/* Header Styles */
+.header {
+  text-align: center;
+  padding: 10px 0;
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
+.header .title {
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
 }
 
-.field {
+.content {
+  margin-top: 100px;
+}
+
+.content .form {
+  width: 550px;
+  margin: 0 auto;
   display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  padding: 0.5rem;
 }
 
-.field label {
-  font-weight: 600;
-  font-size: 0.95rem;
-}
-
-.field input[type="text"],
-.field input[type="email"],
-.field input[type="url"],
-.field input[type="number"],
-.field select,
-.field textarea {
+/* Input Styles */
+.content .form .input {
+  background-color: var(--tertiary-color);
+  font-size: 16px;
+  padding: 10px 20px;
+  border-radius: 4px;
+  color: white;
+  max-width: 450px;
+  border: 2px solid transparent;
+  outline: none;
   width: 100%;
-  padding: 0.75rem 0.75rem;
-  border-radius: 8px;
-  border: 1px solid #2b315a;
-  background: #0e1426;
-  color: var(--text);
+  margin-right: 10px;
+}
+
+.content .form .input:focus {
+  border: 2px solid var(--frost-color);
+}
+
+.content .form .input::placeholder {
+  color: var(--frost-color);
+}
+
+/* Button Styles */
+.content .form .btn {
+  background-color: var(--frost-color);
+  color: white;
+  padding: 10px 0;
+  width: 150px;
+  text-transform: uppercase;
+  font-size: 14px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
   outline: none;
 }
 
-.field input:focus,
-.field select:focus,
-.field textarea:focus {
-  border-color: var(--primary);
-  box-shadow: 0 0 0 3px rgba(108,140,255,.15);
+.content .form .btn:hover,
+.content .form .btn:focus {
+  opacity: 0.9;
 }
 
-.field .error {
-  color: var(--error);
-  font-size: 0.85rem;
-  height: 1.1em;
+/* task List Styles */
+.task-list {
+  max-width: 555px;
+  margin: 20px auto;
 }
 
-.required {
-  color: #ffd1d1;
-  font-weight: bold;
-  margin-left: 0.25em;
-}
-
-.checkbox-row {
-  align-items: center;
-  flex-direction: row;
-}
-
-.field.full-width { grid-column: span 2; }
-
-.form-actions {
-  display: flex;
-  gap: 1rem;
-  align-items: center;
-  justify-content: flex-start;
-  margin-top: 0.75rem;
-}
-
-.btn-primary {
-  background: linear-gradient(135deg, var(--primary), #4b69ff);
+/* task Item Styles */
+.task {
+  background-color: var(--secondary-color);
   color: white;
-  border: none;
-  padding: 0.85rem 1.25rem;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: 600;
+  padding: 15px;
+  border-bottom: 1px solid var(--frost-color);
+  display: flex;
+  word-break: break-all;
+  white-space: pre-wrap;
 }
-.btn-primary:hover { filter: brightness(1.05); }
 
-.btn-secondary {
-  background: transparent;
-  color: var(--text);
-  border: 1px solid #2b315a;
-  padding: 0.85rem 1.25rem;
-  border-radius: 8px;
+.task:first-child {
+  border-top-right-radius: 4px;
+  border-top-left-radius: 4px;
+}
+.task:last-child {
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+  border-bottom: none;
+}
+
+.task.active .toggle {
+  background: linear-gradient(45deg, var(--success-color), var(--secondary-color));
+}
+
+.task.active .title {
+  text-decoration: line-through;
+}
+
+.task .toggle {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1px solid var(--frost-color);
+  cursor: pointer;
+  background: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+}
+
+.task .title {
+  margin: 0 15px;
+  letter-spacing: 1px;
+  font-weight: 300;
+  width: 90%;
+  max-width: 90%;
+}
+
+.task .delete-task {
+  width: fit-content;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  cursor: pointer;
+  color: var(--error-color);
+}
+
+/* task List Footer Styles */
+.task-list-footer {
+  background-color: var(--tertiary-color);
+  color: white;
+  padding: 10px 15px;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  font-size: 12px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.task-list-footer.empty {
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+
+/* Footer Filters Styles */
+.task-list-footer .filters {
+  display: flex;
+  align-items: center;
+}
+
+.task-list-footer .filters .filter {
+  margin: 0 5px;
   cursor: pointer;
 }
-.btn-secondary:hover { background: rgba(255,255,255,.05); }
 
-@media (max-width: 860px) {
-  .grid { grid-template-columns: 1fr; }
-  .field.full-width { grid-column: span 1; }
+.task-list-footer .filters .filter.active {
+  color: var(--primary-color);
+}
+
+.task-list-footer .clear {
+  cursor: pointer;
+}
+
+@media screen and (max-width: 650px) {
+  .content {
+    margin-top: 50px;
+  }
+  .content .form {
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 0 10px;
+  }
+  .content .form .input {
+    width: 100%;
+    max-width: 100%;
+  }
+  .content .form .btn {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .task-list {
+    width: 100%;
+    max-width: 100%;
+    padding: 0 10px;
+  }
 }
