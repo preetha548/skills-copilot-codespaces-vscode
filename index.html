@@ -1,64 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Baby Towels Shop</title>
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <h1 class="logo">BabySoft Towels</h1>
-      <nav class="nav">
-        <a href="#products">Products</a>
-        <a href="#cart">Cart</a>
-        <a href="#contact">Contact</a>
-      </nav>
-      <div class="cart-icon" id="cartButton" title="Open cart">
-        🧺 <span class="cart-count" id="cartCount">0</span>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calendar App Vanilla JS</title>
+  </head>
+  <body>
+    <div id="container">
+      <header id="header">
+        <div id="monthDisplay"></div>
+        <div id="actionButtons">
+          <button data-id="todayButton">Today</button>
+          <button data-id="backButton">Back</button>
+          <button data-id="nextButton">Next</button>
+        </div>
+      </header>
+
+      <div id="weekdays">
+        <div>Sunday</div>
+        <div>Monday</div>
+        <div>Tuesday</div>
+        <div>Wednesday</div>
+        <div>Thursday</div>
+        <div>Friday</div>
+        <div>Saturday</div>
       </div>
+      <div id="calendar"></div>
     </div>
-  </header>
 
-  <section class="hero container" id="home">
-    <div class="hero-content">
-      <h2>Soft, plush towels for your little one</h2>
-      <p>Premium baby towels made with gentle, absorbent fabric. Perfect for bath time and swaddling fun.</p>
-      <button class="btn" id="shopNow">Shop Now</button>
+    <div id="newEventModal">
+      <h2>New Event</h2>
+      <input id="eventTitleInput" placeholder="Event Title" />
+      <button id="saveButton">Save</button>
+      <button id="cancelButton">Cancel</button>
     </div>
-  </section>
 
-  <section class="container" id="products">
-    <h2 class="section-title">Popular Baby Towels</h2>
-    <div class="grid" id="productGrid">
-      <!-- Products will be injected here by JS -->
+    <div id="deleteEventModal">
+      <h2>Event</h2>
+      <p id="eventText"></p>
+      <button id="deleteButton">Delete</button>
+      <button id="closeButton">Close</button>
     </div>
-  </section>
 
-  <!-- Cart Drawer -->
-  <aside class="cart-drawer" id="cartDrawer" aria-hidden="true">
-    <div class="drawer-header">
-      <h3>Your Cart</h3>
-      <button class="close-btn" id="closeCart" aria-label="Close cart">✕</button>
-    </div>
-    <div class="drawer-content" id="drawerContent">
-      <p class="empty" id="emptyCart">Your cart is empty.</p>
-      <ul class="cart-items" id="cartItems"></ul>
-    </div>
-    <div class="drawer-footer">
-      <div class="total">
-        <span>Total:</span>
-        <strong id="cartTotal">$0.00</strong>
-      </div>
-      <button class="btn primary" id="checkoutBtn">Checkout</button>
-    </div>
-  </aside>
+    <div id="modalBackDrop"></div>
 
-  <footer id="contact" class="container footer">
-    <p>&copy; 2025 BabySoft Towels. All rights reserved.</p>
-  </footer>
-
-  <script src="script.js"></script>
-</body>
+    <script src="./src/index.js"></script>
+  </body>
 </html>
