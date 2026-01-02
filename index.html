@@ -1,196 +1,197 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Static Template</title>
-    <style>
-      * {
-        font-family: poppins;
-      }
-      body {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        background-color: #ede6f6;
-      }
-      form {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
-      .main {
-        height: 230px;
-        width: 50vw;
-        box-sizing: border-box;
-        background-color: white;
-        border-top: 12px solid #663ab5;
-        border-radius: 10px;
-        margin: 13px;
-        margin-bottom: 0;
-        padding: 10px;
-        padding-left: 30px;
-        font-size: 13px;
-      }
-      .main h1 {
-        font-size: 25px;
-      }
-      .name {
-        background-color: white;
-        box-sizing: border-box;
-        height: 150px;
-        width: 50vw;
-        margin: 13px;
-        padding: 10px;
-        padding-left: 30px;
-        margin-bottom: 0;
-        border-radius: 10px;
-      }
-      input[type="text"],
-      [type="email"] {
-        border: none;
-        border-bottom: 1px solid black;
-        width: 90%;
-        padding: 5px;
-      }
-      .email {
-        background-color: white;
-        box-sizing: border-box;
-        height: 150px;
-        width: 50vw;
-        margin: 13px;
-        margin-bottom: 0;
-        padding: 10px;
-        padding-left: 30px;
-        border-radius: 10px;
-      }
-      /* button {
-        margin: 13px;
-        margin-bottom: 0;
-        align-self: flex-start;
-        position: relative;
-        left: 372px;
-        padding: 8px 19px;
-        border-radius: 3px;
-        background-color: #663ab5;
-        border: none;
-        color: white;
-      } */
-      .submit {
-        width: 50vw;
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-start;
-      }
-      button {
-        margin: 13px;
-        margin-left: 0;
-        margin-bottom: 0;
-        padding: 8px 19px;
-        border-radius: 3px;
-        background-color: #663ab5;
-        border: none;
-        color: white;
-      }
-      button:hover {
-        background-color: #452286;
-        transition: ease-in 200ms;
-      }
-      .rule {
-        width: 50vw;
-        margin-top: 15px;
-        font-size: 13px;
-        color: grey;
-      }
-      .policy {
-        font-size: 14px;
-        color: grey;
-      }
-      .policy a {
-        text-decoration: none;
-        color: grey;
-        text-decoration: underline;
-      }
-      img {
-        margin-top: 13px;
-        height: 200px;
-        width: 50vw;
-        object-fit: fill;
-        object-position: center;
-        border-radius: 10px;
-      }
-
-      .Google {
-        text-align: center;
-      }
-      @media only screen and (max-width: 1000px){
-        img, .main, .name, .email,.submit, .rule, .policy, .Google {
-          width: 90vw;
-        }
-        img {
-          height: 125px;
-        }
-        .main {
-          height: 180px;
-          font-size: 12px;
-        }
-        .name, .email {
-          height: 110px;
-          font-size: 12px;
-        }
-
-        .main h1 {
-          font-size: 18px;
-        }
-        .main p,h4 {
-          margin: 10px 0px;
-        }
-        h1 {
-          font-size: 25px;
-        }
-        input[type="text"],
-        [type="email"] {
-          padding: 5;
-        }
-
-        button {
-          padding: 10px 22px;
-          border-radius: 5px;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <form action="">
-      <img src="c:\Users\vaish\Downloads\83369524.jpg" alt="Neeraj Meka" >
-      <div class="main">
-        <h1>Open Letter Maker</h1>
-        <hr />
-        <p>
-          All the Submissions to this form will be appended into a table as
-          signatures in the style of open letter.
-        </p>
-        <h4 style="color: red;">* Required</h4>
-      </div>
-      <div class="name">
-        <h3>Name <span style="color: red;">*</span></h3>
-        <input type="text" name="name" id="" required />
-      </div>
-      <div class="email">
-        <h3>Email <span style="color: red;">*</span></h3>
-        <input type="email" name="name" id="" required />
-      </div>
-      <div class="submit">
-        <button>Submit</button>
-      </div>
-      <p class="rule">Never submit passwords through Google Forms</p>
-      <p class="policy">
-        This content is neither created nor endrosed by Google.
-        <a href="#">Report Abuse.</a> <a href="#">Terms of condition.</a>
-        <a href="#">Privacy Policy.</a>
-        <h1 class="Google" style="color: grey; font-weight: 550; width: 50vw;">Google Forms</h1>
-      </p>
-    </form>
-  </body>
+    <title>PGC-GYM Landing Page</title>
+    <!-- Ion Icons Js -->
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+    <!-- JS -->
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <!-- Menu -->
+    <div class="menu">
+        <div class="container flex">
+            <!-- Mobile Button -->
+            <div class="mobile-btn">
+                <ion-icon name="grid"></ion-icon>
+            </div>
+            <div class="logo">
+                <img src="https://raw.githubusercontent.com/programmercloud/pgc-gym/main/img/logo.png" alt="" />
+            </div>
+            <ul class="nav">
+                <li class="nav-item"><a href="#">Home</a></li>
+                <li class="nav-item"><a href="#why-us">Features</a></li>
+                <li class="nav-item"><a href="#explore">Explore</a></li>
+                <li class="nav-item"><a href="#discount">Register</a></li>
+            </ul>
+            <a href="#" class="btn">Register</a>
+        </div>
+    </div>
+    <!-- End Menu -->
+    <!-- Header -->
+    <header class="header">
+        <div class="container flex">
+            <div class="text">
+                <h1 class="mb">
+                    Complete Daily <br />
+                    <span>Workout</span> At Home
+                </h1>
+                <p class="mb">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minima
+                    sunt sed tempora neque molestiae corrupti nobis harum ullam eos nam!
+                </p>
+                <a href="#" class="btn mt">Get Started Now</a>
+            </div>
+            <div class="visual">
+                <img src="https://raw.githubusercontent.com/programmercloud/pgc-gym/main/img/banner-img.png" alt="" />
+            </div>
+        </div>
+    </header>
+    <!-- End Header -->
+    <!-- Why Us -->
+    <div class="section" id="why-us">
+        <div class="container flex">
+            <div class="text">
+                <h2 class="primary mb">Why Choose Us?</h2>
+                <h3 class="secondary mb">Consulatation with Expert.</h3>
+                <p class="tertiary">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias quos
+                    maxime tempore?
+                </p>
+                <h3 class="secondary mb">Consulatation with Expert.</h3>
+                <p class="tertiary">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias quos
+                    maxime tempore?
+                </p>
+            </div>
+            <div class="visual">
+                <img src="https://raw.githubusercontent.com/programmercloud/pgc-gym/main/img/why-us.png" alt="" />
+            </div>
+        </div>
+    </div>
+    <!-- End Why Us -->
+    <!-- Explore -->
+    <div class="section" id="explore">
+        <div class="container flex">
+            <div class="visual">
+                <img src="https://raw.githubusercontent.com/programmercloud/pgc-gym/main/img/explore.jpg" alt="" />
+            </div>
+            <div class="text">
+                <h2 class="primary mb">
+                    Explore Our Fitness <br />
+                    Studio
+                </h2>
+                <p class="tertiary mb">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis
+                    esse vitae ratione quos maiores eveniet temporibus illum! Eligendi
+                    amet officia unde sint totam ut optio. Molestiae, illo quia?
+                </p>
+                <a href="#" class="btn mt">Get Started Now</a>
+            </div>
+        </div>
+    </div>
+    <!-- End Explore -->
+    <!-- Trainer -->
+    <div class="section" id="trainer">
+        <h2 class="primary mb">Our Professional Trainers</h2>
+        <div class="container flex">
+            <div class="trainer">
+                <img src="https://raw.githubusercontent.com/programmercloud/pgc-gym/main/img/trainer1.jpg" alt="" />
+                <h3 class="secondary mb">Alan Smith</h3>
+                <p class="tertiary mb">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla.
+                </p>
+                <a href="#" class="btn-2">
+                    <ion-icon name="arrow-redo-circle-outline"></ion-icon>
+                </a>
+            </div>
+            <div class="trainer">
+                <img src="https://raw.githubusercontent.com/programmercloud/pgc-gym/main/img/trainer2.jpg" alt="" />
+                <h3 class="secondary mb">Alan Smith</h3>
+                <p class="tertiary mb">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla.
+                </p>
+                <a href="#" class="btn-2">
+                    <ion-icon name="arrow-redo-circle-outline"></ion-icon>
+                </a>
+            </div>
+            <div class="trainer">
+                <img src="https://raw.githubusercontent.com/programmercloud/pgc-gym/main/img/trainer3.jpg" alt="" />
+                <h3 class="secondary mb">Alan Smith</h3>
+                <p class="tertiary mb">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla.
+                </p>
+                <a href="#" class="btn-2">
+                    <ion-icon name="arrow-redo-circle-outline"></ion-icon>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- End Trainer -->
+    <!-- Testimonial -->
+    <div class="section" id="testimonial">
+        <div class="container flex">
+            <div class="text">
+                <h2 class="primary">
+                    That's What Our Super <br />
+                    Client Says
+                </h2>
+                <br />
+                <br />
+                <br />
+                <div class="client">
+                    <img src="https://raw.githubusercontent.com/programmercloud/pgc-gym/main/img/client1.jpg" alt="" />
+                    <h2 class="secondary">Exelent Training</h2>
+                    <p class="tertiary">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi
+                        quas voluptatem ad, repudiandae voluptates odio deleniti
+                        reiciendis in veniam quidem expedita maxime error fugit. Pariatur
+                        quasi sunt aut id. Lorem, ipsum dolor sit amet consectetur
+                        adipisicing elit. Neque, officiis.
+                    </p>
+                </div>
+            </div>
+            <div class="visual">
+                <img src="https://raw.githubusercontent.com/programmercloud/pgc-gym/main/img/testimonial.png" alt="" />
+            </div>
+        </div>
+    </div>
+    <!-- End Testimonial -->
+    <!-- Discount -->
+    <div class="section" id="discount">
+        <div class="container flex">
+            <div class="visual">
+                <img src="https://raw.githubusercontent.com/programmercloud/pgc-gym/main/img/discount.png" alt="" />
+            </div>
+            <div class="text">
+                <h2 class="primary mb">
+                    Fitness Classes This Summer, Pay Now And Get 25% Discount
+                </h2>
+                <p class="tertiary mb">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab maxime
+                    minus praesentium est et veniam voluptate alias excepturi minima
+                    placeat amet nostrum, eligendi, quod cum ducimus nesciunt ipsa eum,
+                    explicabo eaque obcaecati.
+                </p>
+                <a href="#" class="btn bt">Book Now</a>
+            </div>
+        </div>
+    </div>
+    <!-- End Discount -->
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container flex">
+            <p class="tertiary">
+                &copy; 2022 Programmer Cloud. All Rights Reserved.
+            </p>
+        </div>
+    </footer>
+    <!-- End Footer -->
+    <script src="script.js"></script>
+</body>
 </html>
