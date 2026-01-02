@@ -1,50 +1,43 @@
-// counter
+// script.js
 
-var num1 = setInterval(projectDone, 10)
-var count1 = 3100;
+const cartItemsContainer = document.getElementById('cart-items');
+const totalPriceElement = document.getElementById('total-price');
+let cart = [];
+let totalPrice = 0;
 
-function projectDone(){
-    count1++;
-    document.querySelector("#number1").innerHTML= count1;
-    // stop condition
-    if(count1 == 3500){
-        clearInterval(num1);
-    }
-};
+const menuItems = [
+    { name: 'Pizza', price: 10.00 },
+    { name: 'Burger', price: 5.00 },
+    { name: 'Pasta', price: 7.00 }
+];
 
-var num2 = setInterval(projectDone2, 10)
-var count2 = 1500;
+// Add event listeners to all "Add to Cart" buttons
+document.querySelectorAll('.add-to-cart').forEach((button, index) => {
+    button.addEventListener('click', () => {
+        addToCart(menuItems[index]);
+    });
+});
 
-function projectDone2(){
-    count2++;
-    document.querySelector("#number2").innerHTML= count2;
-    // stop condition
-    if(count2 == 1850){
-        clearInterval(num2);
-    }
-};
+function addToCart(item) {
+    cart.push(item);
+    totalPrice += item.price;
+    updateCart();
+}
 
-var num3 = setInterval(projectDone3, 10)
-var count3 = 1800;
+function updateCart() {
+    cartItemsContainer.innerHTML = ''; // Clear previous items
+    cart.forEach((item, index) => {
+        const cartItem = document.createElement('div');
+        cartItem.textContent = `${item.name} - $${item.price.toFixed(2)}`;
+        cartItemsContainer.appendChild(cartItem);
+    });
+    totalPriceElement.textContent = `Total Price: $${totalPrice.toFixed(2)}`;
+}
 
-function projectDone3(){
-    count3++;
-    document.querySelector("#number3").innerHTML= count3;
-    // stop condition
-    if(count3 == 2100){
-        clearInterval(num3);
-    }
-};
-
-
-var num4 = setInterval(projectDone4, 10)
-var count4 = 12;
-
-function projectDone4(){
-    count4++;
-    document.querySelector("#number4").innerHTML= count4;
-    // stop condition
-    if(count4 == 350){
-        clearInterval(num4);
-    }
-};
+// Clear the cart when the "Checkout" button is clicked
+document.getElementById('checkout-btn').addEventListener('click', () => {
+    alert(`Your total is $${totalPrice.toFixed(2)}. Thank you for your order!`);
+    cart = [];
+    totalPrice = 0;
+    updateCart();
+});
