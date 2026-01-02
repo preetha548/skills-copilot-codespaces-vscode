@@ -1,47 +1,47 @@
 <!DOCTYPE html>
-<html>
-
-<head>
-    <title>Medical Reminder App</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
-</head>
+<html lang="en">
+    <head></head>
+    <meta charset="UTF-8">
+    <meta name="viewport" 
+          content="width=device-width, 
+                   initial-scale=1.0">
+    <title>The Online Art Auction</title>
+    <link rel="stylesheet" href="style.css">
 
 <body>
     <header>
-        <h1>Medical Reminder App</h1>
+        <h1>
+            Welcome to Online 
+            Art Auction
+        </h1>
     </header>
-    <div class="form-container">
-        <h2>Add Medication</h2>
-        <form id="medication-form">
-            <label for="medication-name">Medication Name:</label>
-            <input type="text" id="medication-name" name="medication-name" required>
-            <label for="medication-dosage">Dosage:</label>
-            <input type="number" id="medication-dosage" name="medication-dosage" required>
-            <button type="submit">Add Medication</button>
-        </form>
-    </div>
-    <div class="list-container">
-        <h2>Medication List:</h2>
-        <ul id="medication-list"></ul>
-    </div>
-    <div class="form-container">
-        <h2>Add Reminder</h2>
-        <form id="reminder-form">
-            <label for="reminder-name">Reminder Name:</label>
-            <input type="text" id="reminder-name" name="reminder-name" required>
-            <label for="reminder-time">Reminder Time:</label>
-            <input type="time" id="reminder-time" name="reminder-time" required>
-            <button type="submit">Add Reminder</button>
-        </form>
-    </div>
-    <div class="list-container">
-        <h2>Reminder List:</h2>
-        <ul id="reminder-list"></ul>
-    </div>
+    <section class="art-listings">
+        <div class="art-card">
+            <!-- add your image url here -->
+            <img src="C:\Users\vaish\Downloads\planet.jpg" alt="Artwork 1">
+            <h2>Artwork - 01</h2>
+            <p>Artist: Kumar </p>
+            <p>
+                Description: Description of 
+                the artwork goes here.
+            </p>
+            <p>Current Bid: $500</p>
+            <button>Place Bid</button>
+        </div>
+        <div class="art-card">
+            <!-- add your image url here -->
+            <img src="C:\Users\vaish\Downloads\240_F_273227473_N0WRQuX3uZCJJxlHKYZF44uaJAkh2xLG.jpg" alt="Artwork 2">
+            <h2>Artwork - 02</h2>
+            <p>Artist: Raj 2</p>
+            <p>
+                Description: Description of 
+                the artwork goes here.
+            </p>
+            <p>Current Bid: $700</p>
+            <button>Place Bid</button>
+        </div>
+    </section>
     <script src="script.js"></script>
-    <footer>
-        <p>&copy; 2023 Medical Reminder App</p>
-    </footer>
 </body>
 
 </html>
