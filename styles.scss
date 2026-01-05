@@ -1,0 +1,42 @@
+@import '../node_modules/sassyman/index';
+
+:root {
+  --pink: #e760bf;
+  --blue: #5b98c9;
+  --dark-blue: #0c164f;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background-color: var(--dark-blue);
+}
+
+.title {
+  color: var(--pink);
+  font-size: 5rem;
+  opacity: 0;
+  cursor: pointer;
+  @include absolute(30% _ _ 7%, 1);
+}
+
+.viewport {
+  display: grid;
+  grid-gap: 0.2rem;
+  grid-template-columns: repeat(10, 1fr);
+  @include size(100vw, 100vh);
+
+  & > div {
+    background-color: var(--blue);
+  }
+}
