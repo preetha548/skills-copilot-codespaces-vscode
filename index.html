@@ -1,26 +1,150 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>Parcel Sandbox</title>
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Electricity Bill</title>
+    <link rel="stylesheet" href="styles.css" />
   </head>
 
   <body>
-    <h1 class="title">Hover Me!</h1>
+    <form id="form_app">
+      <div id="electricity">
+        <div id="bill">
+          <h2>Electricity Bill</h2>
 
-    <section class="viewport">
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-    </section>
+          <table>
+            <tbody>
+              <tr>
+                <td>
+                  <label for="rrNumber">Enter RR <br />Number</label>
+                </td>
+                <td>
+                  <input
+                    type="text"
+                    id="rrNumber"
+                    name="rrNumber"
+                    placeholder="Enter your RR Number"
+                    value="N8EH"
+                    required
+                  />
+                </td>
+              </tr>
 
-    <script src="src/index.js" defer></script>
+              <tr>
+                <td>
+                  <label for="customer">Consumer <br />Name</label>
+                </td>
+                <td>
+                  <input
+                    type="text"
+                    id="customer"
+                    name="customer"
+                    placeholder="Enter Consumer Name"
+                    required
+                  />
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <label for="area">Address</label>
+                </td>
+                <td>
+                  <textarea
+                    id="area"
+                    name="area"
+                    cols="20"
+                    rows="5"
+                    placeholder="Enter Address"
+                    required
+                  ></textarea>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <label for="currentDate">Bill Reading <br />Date</label>
+                </td>
+                <td>
+                  <input
+                    type="date"
+                    id="currentDate"
+                    name="currentDate"
+                    required
+                  />
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <label for="old">Enter Old <br />Meter Reading</label>
+                </td>
+                <td>
+                  <input
+                    type="number"
+                    id="old"
+                    name="old"
+                    placeholder="Enter Old Reading"
+                    min="0"
+                    required
+                  />
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <label for="current">Enter Current <br />Meter Reading</label>
+                </td>
+                <td>
+                  <input
+                    type="number"
+                    id="current"
+                    name="current"
+                    placeholder="Enter Current Reading"
+                    min="0"
+                    required
+                  />
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <label for="arrears">Enter Arrears <br />if any</label>
+                </td>
+                <td>
+                  <input
+                    type="number"
+                    id="arrears"
+                    name="arrears"
+                    value="0"
+                    min="0"
+                  />
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <button type="reset" id="reset">Clear</button>
+                </td>
+                <td>
+                  <button type="submit">Submit</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div>
+            <p
+              id="result"
+              style="font-weight: bold; font-size: 1rem; color: #770080;"
+            ></p>
+          </div>
+        </div>
+      </div>
+    </form>
+
+    <script src="index.js"></script>
   </body>
 </html>

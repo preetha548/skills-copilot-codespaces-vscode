@@ -1,5 +1,5 @@
 {
-  "name": "slick-ui-animations-with-animejs",
+  "name": "electricity-bill",
   "version": "1.0.0",
   "description": "",
   "main": "index.html",
@@ -8,18 +8,14 @@
     "build": "parcel build index.html"
   },
   "dependencies": {
-    "animejs": "3.2.0",
-    "sassyman": "0.4.1"
+    "parcel-bundler": "^1.6.1"
   },
   "devDependencies": {
     "@babel/core": "7.2.0",
-    "parcel-bundler": "^1.6.1"
+    "typescript": "4.4.4"
   },
-  "keywords": [
-    "animejs",
-    "interaction",
-    "sass",
-    "animation",
-    "grid"
-  ]
+  "resolutions": {
+    "@babel/preset-env": "7.13.8"
+  },
+  "keywords": []
 }
