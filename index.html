@@ -1,111 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Smart College ERP Dashboard</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-</head>
-<body class="bg-gray-100 flex">
 
-  <!-- Sidebar -->
-  <aside class="w-64 bg-gray-800 text-white min-h-screen p-5 hidden md:block">
-    <h1 class="text-2xl font-bold mb-8 text-center">College ERP</h1>
-    <nav class="space-y-4">
-      <a href="#" class="flex items-center p-2 rounded hover:bg-gray-700"><i class="fas fa-tachometer-alt mr-2"></i> Dashboard</a>
-      <a href="#" class="flex items-center p-2 rounded hover:bg-gray-700"><i class="fas fa-user-graduate mr-2"></i> Students</a>
-      <a href="#" class="flex items-center p-2 rounded hover:bg-gray-700"><i class="fas fa-chalkboard-teacher mr-2"></i> Faculty</a>
-      <a href="#" class="flex items-center p-2 rounded hover:bg-gray-700"><i class="fas fa-book mr-2"></i> Courses</a>
-      <a href="#" class="flex items-center p-2 rounded hover:bg-gray-700"><i class="fas fa-calendar-check mr-2"></i> Attendance</a>
-      <a href="#" class="flex items-center p-2 rounded hover:bg-gray-700"><i class="fas fa-file-alt mr-2"></i> Exams</a>
-    </nav>
-  </aside>
+  <!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Smart ERP College Portal</title>
+    </head>
 
-  <!-- Main Content -->
-  <div class="flex-1 flex flex-col">
-
-    <!-- Navbar -->
-    <header class="bg-blue-600 text-white p-4 flex justify-between items-center shadow">
-      <h2 class="text-xl font-semibold">ERP Dashboard</h2>
-      <div class="space-x-4">
-        <button class="hover:bg-blue-500 px-3 py-1 rounded">Profile</button>
-        <button class="hover:bg-blue-500 px-3 py-1 rounded">Logout</button>
-      </div>
-    </header>
-
-    <!-- Dashboard Cards -->
-    <main class="p-6 flex-1 overflow-y-auto">
-      <h3 class="text-2xl font-bold mb-6">Dashboard</h3>
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-6">
-        <div class="bg-blue-500 text-white p-6 rounded-lg shadow">
-          <h4 class="text-lg">Students</h4>
-          <p class="text-3xl font-bold mt-2">1200</p>
-        </div>
-        <div class="bg-green-500 text-white p-6 rounded-lg shadow">
-          <h4 class="text-lg">Faculty</h4>
-          <p class="text-3xl font-bold mt-2">75</p>
-        </div>
-        <div class="bg-yellow-500 text-white p-6 rounded-lg shadow">
-          <h4 class="text-lg">Courses</h4>
-          <p class="text-3xl font-bold mt-2">25</p>
-        </div>
-        <div class="bg-red-500 text-white p-6 rounded-lg shadow">
-          <h4 class="text-lg">Exams</h4>
-          <p class="text-3xl font-bold mt-2">10</p>
-        </div>
-      </div>
-
-      <!-- Charts & Activity -->
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        <!-- Chart Placeholder -->
-        <div class="lg:col-span-2 bg-white p-6 rounded-lg shadow">
-          <h4 class="text-xl font-semibold mb-4">Attendance Trend</h4>
-          <canvas id="attendanceChart" class="w-full h-64"></canvas>
-        </div>
-
-        <!-- Recent Activity -->
-        <div class="bg-white p-6 rounded-lg shadow">
-          <h4 class="text-xl font-semibold mb-4">Recent Activity</h4>
-          <ul class="space-y-2">
-            <li class="p-2 bg-gray-100 rounded">John Doe registered for Computer Science 101.</li>
-            <li class="p-2 bg-gray-100 rounded">Faculty meeting scheduled on 10th Jan.</li>
-            <li class="p-2 bg-gray-100 rounded">Exam results for Mathematics released.</li>
-            <li class="p-2 bg-gray-100 rounded">New student Jane Smith added to the database.</li>
-          </ul>
-        </div>
-      </div>
-    </main>
-  </div>
-
-  <!-- Chart.js -->
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script>
-    const ctx = document.getElementById('attendanceChart').getContext('2d');
-    new Chart(ctx, {
-      type: 'line',
-      data: {
-        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
-        datasets: [{
-          label: 'Attendance %',
-          data: [85, 90, 78, 92, 88, 95],
-          backgroundColor: 'rgba(59,130,246,0.2)',
-          borderColor: 'rgba(59,130,246,1)',
-          borderWidth: 2,
-          tension: 0.3
-        }]
-      },
-      options: {
-        responsive: true,
-        plugins: {
-          legend: { position: 'top' }
-        },
-        scales: {
-          y: { beginAtZero: true, max: 100 }
-        }
-      }
-    });
-  </script>
-
-</body>
-</html>
+    <body>
+      <div id="root"></div>
+      <script type="module" src="/src/main.tsx"></script>
+    </body>
+  </html>
+  

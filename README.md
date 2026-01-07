@@ -1,7 +1,7 @@
 
-  # Gents Salon
+  # Smart ERP College Portal
 
-  This is a code bundle for Gents Salon. The original project is available at https://www.figma.com/design/N8GBObc5bkYbOe4fsQx3oo/Gents-Salon.
+  This is a code bundle for Smart ERP College Portal. The original project is available at https://www.figma.com/design/4kUjr1LTtmnMPCVHaXi0o7/Smart-ERP-College-Portal.
 
   ## Running the code
 
