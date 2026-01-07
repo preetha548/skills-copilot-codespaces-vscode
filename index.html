@@ -1,207 +1,80 @@
-<!doctype html>
-<html>
-  <head>
-    <title>Lekshmi L Resume</title>
-    <style>
-      body {
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #f5f5f5;
-        color: #333;
-      }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart College ERP Portal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-      .name-and-contact {
-        background: linear-gradient(to right, #083350, #2980b9);
-        color: #fff;
-        padding: 20px;
-        text-align: center;
-      }
-
-      h1 {
-        margin-bottom: 0;
-        font-size: 2.5em;
-      }
-
-      h3 {
-        color: #3498db;
-      }
-
-      ul {
-        list-style-type: none;
-        padding: 0;
-      }
-
-      li {
-        margin-bottom: 10px;
-      }.name-and-contact img {
-      border-radius: 50%; /* Circular frame for the image */
-      margin-bottom: 10px;
-    }
-
-      .languages-known,
-      .location,
-      .education,
-      .work-experience,
-      .projects-engagements-recognition,
-      .interests,
-      .skills {
-        margin: 20px;
-        background-color: #fff;
-        padding: 20px;
-        border-radius: 8px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      }
-
-      .languages-known,
-      .location,
-      .education,
-      .work-experience,
-      .projects-engagements-recognition,
-      .interests,
-      .skills {
-        transition: transform 0.3s ease-in-out;
-      }
-
-      .languages-known:hover,
-      .location:hover,
-      .education:hover,
-      .work-experience:hover,
-      .projects-engagements-recognition:hover,
-      .interests:hover,
-      .skills:hover {
-        transform: scale(1.02);
-      }
-
-      .languages-known h3,
-      .location h3,
-      .education h3,
-      .work-experience h3,
-      .projects-engagements-recognition h3,
-      .interests h3,
-      .skills h3 {
-        color: #3498db;
-      }
-
-      .interests li,
-      .skills li {
-        list-style-type: square;
-        margin-left: 20px;
-      }
-      .languages-known ul ,.projects-engagements-recognition ul{
-  list-style-type: disc; /* Use disc for filled circles, circle for empty circles, square for squares, etc. */
-  margin-left: 20px; /* Add some left margin for indentation */
-}
-
-    </style>
-  </head>
-  <body>
-    <div class="name-and-contact">
-      <h1>Lekshmi L</h1>
-      <p>github.com/lekshmiiyyer</p>
-      <p>Linkedin.com/in/lekshmi-l</p>
-      <p>lekshmiyyer123@gmail.com | 8281075288</p>
-    </div>
-  </body>
-  
-
-    <div class="languages-known">
-      <h3>Languages known:</h3>
-      <ul>
-        <li>English</li>
-        <li>Hindi</li>
-        <li>Malayalam</li>
-      </ul>
-    </div>
-    
-
-    <div class="location">
-      <h3>Location:</h3>
-      <p>Punkunnam, Thrissur</p>
+    <!-- Login Page -->
+    <div id="loginPage" class="page active">
+        <h2>College ERP Login</h2>
+        <input type="text" id="username" placeholder="Username">
+        <input type="password" id="password" placeholder="Password">
+        <button onclick="login()">Login</button>
+        <p id="loginError" class="error"></p>
     </div>
 
-    <div class="education">
-      <h3>Education:</h3>
-      <ul>
-        <li>
-          Currently pursuing B. Tech second year from Christ College of
-          Engineering, Irinjalakuda, specializing in Computer Science and
-          Engineering
-        </li>
-      </ul>
+    <!-- ERP Portal -->
+    <div id="erpPortal" class="page">
+        <header>
+            <h1>Smart College ERP Portal</h1>
+        </header>
+
+        <nav>
+            <button onclick="showSection('dashboard')">Dashboard</button>
+            <button onclick="showSection('courses')">Courses</button>
+            <button onclick="showSection('attendance')">Attendance</button>
+            <button onclick="showSection('grades')">Grades</button>
+            <button onclick="showSection('profile')">Profile</button>
+            <button onclick="logout()">Logout</button>
+        </nav>
+
+        <main>
+            <!-- Dashboard -->
+            <section id="dashboard" class="active">
+                <h2>Dashboard</h2>
+                <p>Welcome to your college ERP dashboard.</p>
+            </section>
+
+            <!-- Courses -->
+            <section id="courses">
+                <h2>Courses</h2>
+                <ul id="courseList"></ul>
+                <input type="text" id="newCourse" placeholder="Add a new course">
+                <button onclick="addCourse()">Add Course</button>
+            </section>
+
+            <!-- Attendance -->
+            <section id="attendance">
+                <h2>Attendance</h2>
+                <p>Total Attendance: <span id="attendanceCount">0</span>%</p>
+                <button onclick="markPresent()">Mark Present (+10%)</button>
+            </section>
+
+            <!-- Grades -->
+            <section id="grades">
+                <h2>Grades</h2>
+                <table>
+                    <tr><th>Course</th><th>Grade</th></tr>
+                    <tr><td>Math</td><td id="mathGrade">A</td></tr>
+                    <tr><td>Science</td><td id="scienceGrade">B+</td></tr>
+                    <tr><td>English</td><td id="englishGrade">A-</td></tr>
+                </table>
+            </section>
+
+            <!-- Profile -->
+            <section id="profile">
+                <h2>Profile</h2>
+                <p>Name: John Doe</p>
+                <p>Student ID: 12345</p>
+                <p>Email: john.doe@example.com</p>
+            </section>
+        </main>
     </div>
 
-    <div class="work-experience">
-      <h3>Work Experience:</h3>
-      <ul>
-        <li>
-          ICT Academy, May 2023, Full Stack Development internship, Irinjalakuda
-        </li>
-      </ul>
-    </div>
-
-    <div class="projects-engagements-recognition">
-      <h3>Projects, Engagements & Recognition:</h3>
-      <ul>
-        <li>Project Work:</li>
-        <ul>
-          <li>
-            IOT project on Automated Visitor Counter System as a part of project
-            expo conducted by the college (Feb 2023)
-          </li>
-          <li>
-            Metal Detector project as a part of project expo conducted by the
-            Electronics and Communication Department of the college (Feb 2022)
-          </li>
-        </ul>
-        <li>Awards:</li>
-        <ul>
-          <li>
-            Semester topper in B. Tech 1st year (2 semester) of all the branches
-          </li>
-          <li>
-            Best outgoing student and class topper in the high school section
-          </li>
-        </ul>
-        <li>Certifications, Competitions, and Workshops:</li>
-        <ul>
-          <li>- AI for Women conducted by GUVI</li>
-          <li>- Hands-on training in Blockchain workshop conducted by CODE</li>
-          <li>- Coding competitions, UI/UX design competitions in Figma</li>
-          <li>
-            - Data Science with Power BI workshop, MySQL workshop by skilledUP
-          </li>
-        </ul>
-        <li>Speaker Related Work:</li>
-        <ul>
-          <li>Co-coordinator of the Quiz and Debate club of the college</li>
-          <li>Organized and managed speech competitions</li>
-          <li>
-            Participated in presentation and debate competitions hosted by the
-            college
-          </li>
-        </ul>
-      </ul>
-    </div>
-
-    <div class="interests">
-      <h3>Interests:</h3>
-      <ul>
-        <li>Watching movies: Detective and investigative thriller</li>
-        <li>Writing poems in Hindi and English languages</li>
-        <li>Shooting creative videos for social media</li>
-      </ul>
-    </div>
-
-    <div class="skills">
-      <h3>Skills:</h3>
-      <ul>
-        <li>MS Office-Excel, PPT, Word (intermediate)</li>
-        <li>Frontend development languages(intermediate)</li>
-        <li>Python</li>
-        <li>C Data structure</li>
-        <li>OOPS basic concepts(Java)</li>
-      </ul>
-    </div>
-  </body>
+    <script src="script.js"></script>
+</body>
 </html>

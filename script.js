@@ -1,27 +1,72 @@
-document.addEventListener('DOMContentLoaded', function () {
-var modeSwitch = document.querySelector('.mode-switch');
-modeSwitch.addEventListener('click', function () { document.documentElement.classList.toggle('dark');
-modeSwitch.classList.toggle('active');
-});
-var listView = document.querySelector('.list-view');
-var gridView = document.querySelector('.grid-view');
-var projectsList = document.querySelector('.project-boxes');
-listView.addEventListener('click', function () {
-gridView.classList.remove('active');
-listView.classList.add('active');
-projectsList.classList.remove('jsGridView');
-projectsList.classList.add('jsListView');
-});
-gridView.addEventListener('click', function () {
-gridView.classList.add('active');
-listView.classList.remove('active');
-projectsList.classList.remove('jsListView');
-projectsList.classList.add('jsGridView');
-});
-document.querySelector('.messages-btn').addEventListener('click', function () {
-document.querySelector('.messages-section').classList.add('show');
-});
-document.querySelector('.messages-close').addEventListener('click', function() {
-document.querySelector('.messages-section').classList.remove('show');
-});
-});
+// Mock login credentials
+const USERNAME = "student";
+const PASSWORD = "1234";
+
+// Pages
+const loginPage = document.getElementById('loginPage');
+const erpPortal = document.getElementById('erpPortal');
+const loginError = document.getElementById('loginError');
+
+// Courses
+let courses = ["Math", "Science", "English"];
+const courseList = document.getElementById('courseList');
+
+// Login function
+function login() {
+    const user = document.getElementById('username').value.trim();
+    const pass = document.getElementById('password').value.trim();
+
+    if(user === USERNAME && pass === PASSWORD){
+        loginPage.classList.remove('active');
+        erpPortal.classList.add('active');
+        displayCourses();
+        showSection('dashboard');
+    } else {
+        loginError.textContent = "Invalid username or password!";
+    }
+}
+
+// Logout function
+function logout() {
+    erpPortal.classList.remove('active');
+    loginPage.classList.add('active');
+    document.getElementById('username').value = '';
+    document.getElementById('password').value = '';
+    loginError.textContent = '';
+}
+
+// Section navigation
+function showSection(sectionId) {
+    const sections = document.querySelectorAll('main section');
+    sections.forEach(sec => sec.classList.remove('active'));
+    document.getElementById(sectionId).classList.add('active');
+}
+
+// Display courses
+function displayCourses() {
+    courseList.innerHTML = '';
+    courses.forEach(course => {
+        const li = document.createElement('li');
+        li.textContent = course;
+        courseList.appendChild(li);
+    });
+}
+
+// Add course
+function addCourse() {
+    const newCourse = document.getElementById('newCourse').value.trim();
+    if(newCourse) {
+        courses.push(newCourse);
+        document.getElementById('newCourse').value = '';
+        displayCourses();
+    }
+}
+
+// Attendance
+let attendance = 0;
+function markPresent() {
+    if(attendance < 100) {
+        attendance += 10;
+        document.getElementById('attendanceCount').textContent = attendance;
+    }
+}
