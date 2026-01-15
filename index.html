@@ -1,43 +1,15 @@
-<!DOCTYPE html>
-<head>
-  <title>Virtual Keyboard w/ HTML, CSS & JS</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta charset="utf-8" />
-  <link rel="stylesheet" href="keyboard/keyboard.css">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-</head>
 
-<body>
-  <h1>Virtual Keyboard w/ HTML, CSS & JS</h1>
-  <h3>Features</h3>
-  <ul>
-    <li>Easy to integrate</li>
-    <li>Responsive</li>
-    <li>Vanilla JS (<strong>no libraries required!</strong>)</li>
-  </ul>
-  <textarea class="use-keyboard-input" style="position: absolute; top: 130px; right: 30px; width: 300px;"></textarea>
+  <!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Product Listing App</title>
+    </head>
 
-  <!--keyboard 
-  <div class="keyboard">
-    <div class="keyboard_keys">
-      <button type="button" class="keyboard__key">a</button>
-      <button type="button" class="keyboard__key keyboard__key--wide">
-        <i class="material-icons">backspace</i>
-      </button>
-      <button type="button" class="keyboard__key keyboard__key--extra-wide">
-          <i class="material-icons">space_bar</i>
-        </button>
-        <button type="button" class="keyboard__key keyboard__key--wide keyboard__key--activatable">
-            <i class="material-icons">keyboard_capslock</i>
-          </button>
-          <button type="button" class="keyboard__key keyboard__key--wide keyboard__key--dark">
-              <i class="material-icons">check_circle</i>
-            </button>
-
-    </div>
-  </div>-->
-
-  <script src="keyboard/keyboard.js"></script>
-</body>
-
-</html>
+    <body>
+      <div id="root"></div>
+      <script type="module" src="/src/main.tsx"></script>
+    </body>
+  </html>
+  

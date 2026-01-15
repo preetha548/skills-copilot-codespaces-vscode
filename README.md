@@ -1,7 +1,7 @@
 
-  # Smart ERP College Portal
+  # Product Listing App
 
-  This is a code bundle for Smart ERP College Portal. The original project is available at https://www.figma.com/design/4kUjr1LTtmnMPCVHaXi0o7/Smart-ERP-College-Portal.
+  This is a code bundle for Product Listing App. The original project is available at https://www.figma.com/design/KWg1IDG9JfsR6hTpdckn7x/Product-Listing-App.
 
   ## Running the code
 
