@@ -1,15 +1,77 @@
+v<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>The Global Herald</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-  <!DOCTYPE html>
-  <html lang="en">
-    <head>
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>Product Listing App</title>
-    </head>
+<header class="top-header">
+    <div class="logo">The Global Herald</div>
+    <div class="date" id="date"></div>
+    <button id="themeToggle">🌙</button>
+</header>
 
-    <body>
-      <div id="root"></div>
-      <script type="module" src="/src/main.tsx"></script>
-    </body>
-  </html>
-  
+<nav class="navbar">
+    <button onclick="filterNews('all')">All</button>
+    <button onclick="filterNews('politics')">Politics</button>
+    <button onclick="filterNews('business')">Business</button>
+    <button onclick="filterNews('sports')">Sports</button>
+    <button onclick="filterNews('tech')">Technology</button>
+</nav>
+
+<div class="breaking">
+    <span>BREAKING</span>
+    <div class="ticker" id="ticker"></div>
+</div>
+
+<main class="grid-layout">
+
+    <!-- Main Headline -->
+    <article class="main-news politics">
+        <img src="https://picsum.photos/800/400" alt="">
+        <h1>Global Summit Ends With Historic Agreement</h1>
+        <p>World leaders signed a historic agreement addressing climate and economic reforms.</p>
+    </article>
+
+    <!-- News Articles -->
+    <article class="news-card business">
+        <h3>Stock Markets Reach Record High</h3>
+        <p>Markets rallied after strong economic indicators.</p>
+    </article>
+
+    <article class="news-card sports">
+        <h3>Championship Final Tonight</h3>
+        <p>Fans await the biggest match of the year.</p>
+    </article>
+
+    <article class="news-card tech">
+        <h3>AI Revolutionizes Healthcare</h3>
+        <p>Artificial intelligence is transforming diagnosis.</p>
+    </article>
+
+    <article class="news-card politics">
+        <h3>Election Results Announced</h3>
+        <p>Ruling party secures a narrow victory.</p>
+    </article>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <h2>Latest Updates</h2>
+        <ul>
+            <li>Oil prices fluctuate</li>
+            <li>New smartphone launched</li>
+            <li>Weather alert issued</li>
+        </ul>
+    </aside>
+
+</main>
+
+<footer>
+    © 2026 The Global Herald | Designed with HTML, CSS & JS
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
