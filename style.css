@@ -1,45 +1,57 @@
-body
-{
-    font-family: Arial;
-    text-align: center;
-    background-color: #ffe6f2;
+body{
+font-family: Arial;
+background:#f5f5f5;
+text-align:center;
 }
 
-.container
-{
-    margin-top: 50px;
+.title{
+color:#c0392b;
+font-size:40px;
 }
 
-h1
-{
-    color: #d63384;
+.subtitle{
+margin-bottom:30px;
 }
 
-img
-{
-    width: 400px;
-    border-radius: 10px;
+.container{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:20px;
+width:70%;
+margin:auto;
 }
 
-button
-{
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #ff4da6;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+.coupon{
+padding:30px;
+border-radius:15px;
+color:white;
+box-shadow:0 5px 10px rgba(0,0,0,0.2);
 }
 
-button:hover
-{
-    background-color: #cc0066;
+.coupon h2{
+margin:10px 0;
 }
 
-#message
-{
-    margin-top: 20px;
-    font-size: 18px;
-    color: #660033;
+button{
+padding:10px 20px;
+border:none;
+border-radius:8px;
+cursor:pointer;
+background:white;
+color:black;
+font-weight:bold;
+}
+
+/* Coupon Colors */
+
+.red{background:#e74c3c;}
+.pink{background:#ff6fa5;}
+.purple{background:#9b59b6;}
+.blue{background:#3498db;}
+.green{background:#27ae60;}
+.brown{background:#a0522d;}
+
+button:hover{
+background:black;
+color:white;
 }

@@ -1,5 +1,4 @@
-function showMessage()
+function redeem(coupon)
 {
-    document.getElementById("message").innerHTML =
-    "Wishing all the strong, beautiful and inspiring women a Happy Women's Day!";
+alert("Coupon Redeemed: " + coupon + " ❤️");
 }
