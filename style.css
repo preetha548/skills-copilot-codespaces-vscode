@@ -1,86 +1,57 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
+body{
+font-family: Arial;
+background:#f5f5f5;
+text-align:center;
 }
 
-body {
-    background: #f2f2f2;
+.title{
+color:#c0392b;
+font-size:40px;
 }
 
-.container {
-    width: 900px;
-    margin: 40px auto;
-    background: white;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+.subtitle{
+margin-bottom:30px;
 }
 
-/* Header */
-.header {
-    background-color: #3b82a8;
-    color: white;
-    padding: 50px 40px;
+.container{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:20px;
+width:70%;
+margin:auto;
 }
 
-.header h1 {
-    font-size: 40px;
-    font-weight: bold;
+.coupon{
+padding:30px;
+border-radius:15px;
+color:white;
+box-shadow:0 5px 10px rgba(0,0,0,0.2);
 }
 
-.header h2 {
-    font-size: 22px;
-    font-weight: normal;
-    margin-top: 10px;
+.coupon h2{
+margin:10px 0;
 }
 
-/* Content */
-.content {
-    padding: 40px;
-    color: #333;
+button{
+padding:10px 20px;
+border:none;
+border-radius:8px;
+cursor:pointer;
+background:white;
+color:black;
+font-weight:bold;
 }
 
-.author {
-    font-size: 18px;
-    font-weight: bold;
-}
+/* Coupon Colors */
 
-.links {
-    margin-top: 5px;
-    color: #666;
-}
+.red{background:#e74c3c;}
+.pink{background:#ff6fa5;}
+.purple{background:#9b59b6;}
+.blue{background:#3498db;}
+.green{background:#27ae60;}
+.brown{background:#a0522d;}
 
-.credits {
-    margin-top: 25px;
-    font-size: 15px;
-    color: #555;
-}
-
-/* Footer */
-.footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 40px;
-    border-top: 1px solid #ddd;
-}
-
-.logo {
-    display: flex;
-    align-items: center;
-    font-weight: bold;
-    color: #3b82a8;
-}
-
-.logo .circle {
-    width: 32px;
-    height: 32px;
-    border: 3px solid #3b82a8;
-    border-radius: 50%;
-    margin-right: 10px;
-}
-
-.tagline {
-    font-size: 14px;
-    color: #666;
+button:hover{
+background:black;
+color:white;
 }

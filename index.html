@@ -1,22 +1,56 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>Cut Event Demo</title>
-  <link rel="stylesheet" href="styles.css">
+<title>Romantic Coupons</title>
+<link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-  <h2>Cut Event Example</h2>
+<h1 class="title">Romantic Coupons</h1>
+<p class="subtitle">editable in canva ♥ printable coupons ♥ instant download</p>
 
-  <div id="source" contenteditable="true">
-    TRY CUT THIS TEXT
-  </div>
+<div class="container">
 
-  <div id="target" contenteditable="true">
-    Paste here
-  </div>
+<div class="coupon red">
+<h2>Dinner Date</h2>
+<p>Restaurant of your choice</p>
+<button onclick="redeem('Dinner Date')">Redeem</button>
+</div>
 
-  <script src="index.js"></script>
+<div class="coupon pink">
+<h2>Special Maid</h2>
+<p>A day of your personal service</p>
+<button onclick="redeem('Special Maid')">Redeem</button>
+</div>
+
+<div class="coupon purple">
+<h2>Chore Pass</h2>
+<p>Excused from chores for one day</p>
+<button onclick="redeem('Chore Pass')">Redeem</button>
+</div>
+
+<div class="coupon blue">
+<h2>Movie Night</h2>
+<p>A quiet Netflix night</p>
+<button onclick="redeem('Movie Night')">Redeem</button>
+</div>
+
+<div class="coupon green">
+<h2>Game Night</h2>
+<p>5 hours of uninterrupted games</p>
+<button onclick="redeem('Game Night')">Redeem</button>
+</div>
+
+<div class="coupon brown">
+<h2>Massage</h2>
+<p>30 minute massage</p>
+<button onclick="redeem('Massage')">Redeem</button>
+</div>
+
+</div>
+
+<script src="script.js"></script>
+
 </body>
 </html>
