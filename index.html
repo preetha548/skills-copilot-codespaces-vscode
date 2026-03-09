@@ -1,274 +1,189 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Post Office Savings Bank Form</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alumni Registration Form</title>
 
 <style>
 
 body{
-    font-family: Arial;
-    background:#f4f4f4;
+    font-family: Arial, sans-serif;
+    background:#d9cdbb;
+    display:flex;
+    justify-content:center;
 }
 
 .container{
-    width:900px;
-    margin:auto;
-    background:white;
-    padding:20px;
-    border:1px solid #ccc;
+    width:700px;
+    background:#d9cdbb;
+    padding:30px;
 }
 
-h2,h3{
-    text-align:center;
+h1{
+    color:#7a5437;
+    margin-bottom:25px;
 }
 
-table{
+label{
+    display:block;
+    margin-top:15px;
+    margin-bottom:5px;
+    color:#5e4b3c;
+}
+
+input, select, textarea{
     width:100%;
-    border-collapse:collapse;
-    margin-bottom:15px;
+    padding:12px;
+    border:1px solid #bba98d;
+    border-radius:5px;
+    box-sizing:border-box;
+    background:#eee8df;
 }
 
-table,th,td{
-    border:1px solid #000;
+.row{
+    display:flex;
+    gap:15px;
 }
 
-th,td{
-    padding:6px;
-    font-size:14px;
-}
-
-input,select{
+.row input{
     width:100%;
-    border:none;
-    outline:none;
 }
 
-.section-title{
-    background:#eee;
-    font-weight:bold;
+.radio-group{
+    margin-top:10px;
+}
+
+.radio-group label{
+    display:inline;
+    margin-right:20px;
+}
+
+textarea{
+    height:90px;
+    resize:none;
+}
+
+.address-row{
+    display:flex;
+    gap:15px;
+    margin-top:10px;
 }
 
 button{
-    padding:10px 20px;
-    background:#0077cc;
+    display:block;
+    margin:30px auto;
+    padding:14px 40px;
+    background:#7a5437;
     color:white;
     border:none;
+    border-radius:25px;
+    font-size:16px;
     cursor:pointer;
 }
 
 button:hover{
-    background:#005fa3;
+    background:#5f4028;
+}
+
+.error{
+    color:red;
+    font-size:13px;
 }
 
 </style>
-
 </head>
-
 
 <body>
 
 <div class="container">
 
-<h2>POST OFFICE SAVINGS BANK</h2>
-<h3>ACCOUNT OPENING / PURCHASE OF CERTIFICATE APPLICATION FORM</h3>
+<h1>Alumni Registration Form</h1>
 
-<table>
+<form id="alumniForm">
 
-<tr class="section-title">
-<td colspan="4">Account Information</td>
-</tr>
+<label>Name</label>
+<div class="row">
+<input type="text" id="firstName" placeholder="First">
+<input type="text" id="lastName" placeholder="Last">
+</div>
 
-<tr>
-<td>Post Office</td>
-<td><input type="text"></td>
-<td>Date</td>
-<td><input type="date"></td>
-</tr>
+<label>Phone</label>
+<input type="text" id="phone" placeholder="### ### ####">
 
-<tr>
-<td>Account Registration No</td>
-<td><input type="text"></td>
-<td>SOL ID</td>
-<td><input type="text"></td>
-</tr>
+<label>Year of Passing</label>
+<input type="number" id="year">
 
-</table>
+<label>Birth Date</label>
+<input type="date" id="birth">
 
+<label>Marital Status</label>
+<div class="radio-group">
+<input type="radio" name="marital" value="Single"> Single
+<input type="radio" name="marital" value="Married"> Married
+</div>
 
-<table>
+<label>Profession</label>
+<input type="text" id="profession">
 
-<tr class="section-title">
-<td colspan="5">Applicant Details</td>
-</tr>
+<label>Address</label>
+<input type="text" placeholder="Street Address">
 
-<tr>
-<th>First Name</th>
-<th>Middle Name</th>
-<th>Last Name</th>
-<th>Gender</th>
-<th>DOB</th>
-</tr>
+<input type="text" placeholder="Street Address Line 2" style="margin-top:10px;">
 
-<tr>
-<td><input type="text"></td>
-<td><input type="text"></td>
-<td><input type="text"></td>
+<div class="address-row">
+<input type="text" placeholder="City">
+<input type="text" placeholder="Region">
+</div>
 
-<td>
+<div class="address-row">
+<input type="text" placeholder="Postal / Zip Code">
+
 <select>
-<option>Male</option>
-<option>Female</option>
-<option>Other</option>
+<option>Romania</option>
+<option>USA</option>
+<option>India</option>
+<option>UK</option>
 </select>
-</td>
+</div>
 
-<td><input type="date"></td>
+<label>Where did life take you after [Institution Name]?</label>
+<textarea></textarea>
 
-</tr>
+<label>Fondest memories of life at [Institution Name]</label>
+<textarea></textarea>
 
-</table>
+<button type="submit">REGISTER</button>
 
+<p id="message"></p>
 
-<table>
-
-<tr class="section-title">
-<td colspan="2">Residential Address</td>
-</tr>
-
-<tr>
-<td>Flat / Building</td>
-<td><input type="text"></td>
-</tr>
-
-<tr>
-<td>Street / Locality</td>
-<td><input type="text"></td>
-</tr>
-
-<tr>
-<td>City</td>
-<td><input type="text"></td>
-</tr>
-
-<tr>
-<td>State</td>
-<td><input type="text"></td>
-</tr>
-
-<tr>
-<td>Pin Code</td>
-<td><input type="number"></td>
-</tr>
-
-<tr>
-<td>Mobile</td>
-<td><input type="number"></td>
-</tr>
-
-<tr>
-<td>Email</td>
-<td><input type="email"></td>
-</tr>
-
-</table>
-
-
-<table>
-
-<tr class="section-title">
-<td colspan="2">KYC Details</td>
-</tr>
-
-<tr>
-<td>Photo ID Type</td>
-<td>
-<select>
-<option>Aadhaar</option>
-<option>PAN</option>
-<option>Passport</option>
-<option>Driving License</option>
-</select>
-</td>
-</tr>
-
-<tr>
-<td>Document Number</td>
-<td><input type="text"></td>
-</tr>
-
-</table>
-
-
-<table>
-
-<tr class="section-title">
-<td colspan="2">First Deposit</td>
-</tr>
-
-<tr>
-<td>Amount (Rs)</td>
-<td><input type="number" id="amount"></td>
-</tr>
-
-<tr>
-<td>Mode of Deposit</td>
-<td>
-<select>
-<option>Cash</option>
-<option>Cheque</option>
-<option>Online Transfer</option>
-</select>
-</td>
-</tr>
-
-</table>
-
-
-<table>
-
-<tr class="section-title">
-<td colspan="2">Nomination</td>
-</tr>
-
-<tr>
-<td>Nominee Name</td>
-<td><input type="text"></td>
-</tr>
-
-<tr>
-<td>Relationship</td>
-<td><input type="text"></td>
-</tr>
-
-<tr>
-<td>Share (%)</td>
-<td><input type="number"></td>
-</tr>
-
-</table>
-
-
-<center>
-<button onclick="submitForm()">Submit Form</button>
-</center>
+</form>
 
 </div>
 
-
 <script>
 
-function submitForm(){
+document.getElementById("alumniForm").addEventListener("submit", function(e){
 
-let amount = document.getElementById("amount").value;
+e.preventDefault();
 
-if(amount == ""){
-alert("Please enter deposit amount");
-return;
+let first = document.getElementById("firstName").value;
+let last = document.getElementById("lastName").value;
+let phone = document.getElementById("phone").value;
+let year = document.getElementById("year").value;
+
+let message = document.getElementById("message");
+
+if(first === "" || last === "" || phone === "" || year === ""){
+    message.innerHTML = "Please fill all required fields.";
+    message.style.color = "red";
+}
+else{
+    message.innerHTML = "Registration Successful!";
+    message.style.color = "green";
 }
 
-alert("Form Submitted Successfully!");
-
-}
+});
 
 </script>
 
