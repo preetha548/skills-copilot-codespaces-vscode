@@ -1,196 +1,274 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hotel Bistro Pre-Order Form</title>
+<title>Post Office Savings Bank Form</title>
 
 <style>
 
 body{
-    font-family: Arial, sans-serif;
-    background:#e8cfcf;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    min-height:100vh;
+    font-family: Arial;
+    background:#f4f4f4;
 }
 
 .container{
-    width:650px;
+    width:900px;
+    margin:auto;
+    background:white;
+    padding:20px;
+    border:1px solid #ccc;
 }
 
-h1{
+h2,h3{
     text-align:center;
 }
 
-.info{
-    text-align:center;
-    font-size:13px;
-    margin-bottom:20px;
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin-bottom:15px;
 }
 
-label{
-    display:block;
-    margin-top:15px;
+table,th,td{
+    border:1px solid #000;
+}
+
+th,td{
+    padding:6px;
+    font-size:14px;
+}
+
+input,select{
+    width:100%;
+    border:none;
+    outline:none;
+}
+
+.section-title{
+    background:#eee;
     font-weight:bold;
 }
 
-.row{
-    display:flex;
-    gap:10px;
-}
-
-.row input{
-    flex:1;
-}
-
-input{
-    width:100%;
-    padding:10px;
-    margin-top:5px;
-    border:1px solid #999;
-    border-radius:4px;
-}
-
-.options{
-    display:flex;
-    justify-content:space-between;
-    margin-top:8px;
-}
-
-.options label{
-    font-weight:normal;
-}
-
-.captcha{
-    background:white;
-    border:1px solid #ccc;
-    padding:15px;
-    width:250px;
-    margin-top:10px;
-}
-
 button{
-    margin-top:20px;
     padding:10px 20px;
-    border:none;
-    background:black;
+    background:#0077cc;
     color:white;
+    border:none;
     cursor:pointer;
 }
 
 button:hover{
-    background:#333;
-}
-
-.error{
-    color:red;
-    font-size:13px;
-}
-
-.success{
-    color:green;
-    margin-top:10px;
+    background:#005fa3;
 }
 
 </style>
+
 </head>
+
 
 <body>
 
 <div class="container">
 
-<h1>Hotel - Bistro Pre-Order Form</h1>
+<h2>POST OFFICE SAVINGS BANK</h2>
+<h3>ACCOUNT OPENING / PURCHASE OF CERTIFICATE APPLICATION FORM</h3>
 
-<p class="info">
-All pre-orders must be received before 10am for lunch bookings and 4pm for dinner bookings
-and are only valid upon confirmation with the Hotel Reception.
-</p>
+<table>
 
-<form id="orderForm">
+<tr class="section-title">
+<td colspan="4">Account Information</td>
+</tr>
 
-<label>Booking Name:</label>
-<div class="row">
-<input type="text" id="firstName" placeholder="First">
-<input type="text" id="lastName" placeholder="Last">
+<tr>
+<td>Post Office</td>
+<td><input type="text"></td>
+<td>Date</td>
+<td><input type="date"></td>
+</tr>
+
+<tr>
+<td>Account Registration No</td>
+<td><input type="text"></td>
+<td>SOL ID</td>
+<td><input type="text"></td>
+</tr>
+
+</table>
+
+
+<table>
+
+<tr class="section-title">
+<td colspan="5">Applicant Details</td>
+</tr>
+
+<tr>
+<th>First Name</th>
+<th>Middle Name</th>
+<th>Last Name</th>
+<th>Gender</th>
+<th>DOB</th>
+</tr>
+
+<tr>
+<td><input type="text"></td>
+<td><input type="text"></td>
+<td><input type="text"></td>
+
+<td>
+<select>
+<option>Male</option>
+<option>Female</option>
+<option>Other</option>
+</select>
+</td>
+
+<td><input type="date"></td>
+
+</tr>
+
+</table>
+
+
+<table>
+
+<tr class="section-title">
+<td colspan="2">Residential Address</td>
+</tr>
+
+<tr>
+<td>Flat / Building</td>
+<td><input type="text"></td>
+</tr>
+
+<tr>
+<td>Street / Locality</td>
+<td><input type="text"></td>
+</tr>
+
+<tr>
+<td>City</td>
+<td><input type="text"></td>
+</tr>
+
+<tr>
+<td>State</td>
+<td><input type="text"></td>
+</tr>
+
+<tr>
+<td>Pin Code</td>
+<td><input type="number"></td>
+</tr>
+
+<tr>
+<td>Mobile</td>
+<td><input type="number"></td>
+</tr>
+
+<tr>
+<td>Email</td>
+<td><input type="email"></td>
+</tr>
+
+</table>
+
+
+<table>
+
+<tr class="section-title">
+<td colspan="2">KYC Details</td>
+</tr>
+
+<tr>
+<td>Photo ID Type</td>
+<td>
+<select>
+<option>Aadhaar</option>
+<option>PAN</option>
+<option>Passport</option>
+<option>Driving License</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td>Document Number</td>
+<td><input type="text"></td>
+</tr>
+
+</table>
+
+
+<table>
+
+<tr class="section-title">
+<td colspan="2">First Deposit</td>
+</tr>
+
+<tr>
+<td>Amount (Rs)</td>
+<td><input type="number" id="amount"></td>
+</tr>
+
+<tr>
+<td>Mode of Deposit</td>
+<td>
+<select>
+<option>Cash</option>
+<option>Cheque</option>
+<option>Online Transfer</option>
+</select>
+</td>
+</tr>
+
+</table>
+
+
+<table>
+
+<tr class="section-title">
+<td colspan="2">Nomination</td>
+</tr>
+
+<tr>
+<td>Nominee Name</td>
+<td><input type="text"></td>
+</tr>
+
+<tr>
+<td>Relationship</td>
+<td><input type="text"></td>
+</tr>
+
+<tr>
+<td>Share (%)</td>
+<td><input type="number"></td>
+</tr>
+
+</table>
+
+
+<center>
+<button onclick="submitForm()">Submit Form</button>
+</center>
+
 </div>
 
-<label>Room number / Contact number:</label>
-<div class="row">
-<input type="text" id="room">
-<input type="text" id="phone" placeholder="### ### ####">
-</div>
-
-<label>Breakfast ordered:</label>
-<div class="options">
-<label><input type="radio" name="breakfast"> Option 1</label>
-<label><input type="radio" name="breakfast"> Option 2</label>
-<label><input type="radio" name="breakfast"> Option 3</label>
-</div>
-
-<label>Starters:</label>
-<div class="options">
-<label><input type="radio" name="starter"> Menu 1</label>
-<label><input type="radio" name="starter"> Menu 2</label>
-<label><input type="radio" name="starter"> Menu 3</label>
-</div>
-
-<label>Desserts:</label>
-<div class="options">
-<label><input type="radio" name="dessert"> Desert 1</label>
-<label><input type="radio" name="dessert"> Desert 2</label>
-<label><input type="radio" name="dessert"> Desert 3</label>
-</div>
-
-<label>Verification*</label>
-
-<div class="captcha">
-<input type="checkbox" id="robot"> I'm not a robot
-</div>
-
-<br>
-
-<button type="submit">Submit</button>
-
-<p id="message"></p>
-
-</form>
-
-</div>
 
 <script>
 
-document.getElementById("orderForm").addEventListener("submit", function(e){
+function submitForm(){
 
-e.preventDefault();
+let amount = document.getElementById("amount").value;
 
-let first = document.getElementById("firstName").value;
-let last = document.getElementById("lastName").value;
-let room = document.getElementById("room").value;
-let phone = document.getElementById("phone").value;
-let robot = document.getElementById("robot").checked;
-
-let message = document.getElementById("message");
-
-if(first === "" || last === "" || room === "" || phone === "")
-{
-    message.innerHTML = "Please fill in all fields.";
-    message.className = "error";
-    return;
+if(amount == ""){
+alert("Please enter deposit amount");
+return;
 }
 
-if(!robot)
-{
-    message.innerHTML = "Please verify that you are not a robot.";
-    message.className = "error";
-    return;
+alert("Form Submitted Successfully!");
+
 }
-
-message.innerHTML = "Form submitted successfully!";
-message.className = "success";
-
-});
 
 </script>
 
