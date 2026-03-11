@@ -1,48 +1,119 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<title>Novel Outline</title>
-<link rel="stylesheet" href="style.css">
-</head>
+<html>
+  <head>
+    <title>Google Maps JavaScript API</title>
+    <meta name="viewport" content="initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <style>
+      #map {
+        height: 100%;
+      }
 
-<body>
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <div>
+      <!-- <button id="bringToCenter">Bring to Center</button> -->
+    </div>
+    <script>
+      let map, marker, infoWindow, infoWindowLatLang;
+      function initMap() {
+        map = new google.maps.Map(document.getElementById("map"), {
+          center: {
+            lat: 51.513329,
+            lng: -0.08895
+          },
+          zoom: 14,
+          mapTypeId: "roadmap",
+          scaleControl: true,
+          fullscreenControlOptions: {
+            position: google.maps.ControlPosition.RIGHT_BOTTOM
+          }
+        });
 
-<h1>NOVEL OUTLINE</h1>
+        marker = new google.maps.Marker({
+          position: {
+            lat: 51.506821,
+            lng: -0.0879
+          },
+          map: map,
+          title: "City of London!"
+        });
 
-<div class="top-section">
+        infoWindow = new google.maps.InfoWindow({
+          content: "<h2>London Bridge</h2>"
+        });
 
-<div class="input-box">
-<label>WORKING TITLE</label>
-<input type="text">
-</div>
+        marker.addListener("click", function() {
+          infoWindow.open(map, marker);
+        });
 
-<div class="input-box">
-<label>GENRE</label>
-<input type="text">
-</div>
+        map.addListener("click", function(mapsMouseEvent) {
+          if (infoWindowLatLang) infoWindowLatLang.close();
 
-<div class="input-box">
-<label>SETTING</label>
-<input type="text">
-</div>
+          infoWindowLatLang = new google.maps.InfoWindow({
+            position: mapsMouseEvent.latLng
+          });
+          infoWindowLatLang.setContent(mapsMouseEvent.latLng.toString());
+          infoWindowLatLang.open(map);
+        });
 
-<div class="input-box">
-<label>PROTAGONIST(S)</label>
-<input type="text">
-</div>
+        const markerControlDiv = document.createElement("div");
+        const markerControl = new MarkerControl(markerControlDiv, map);
 
-<div class="input-box">
-<label>ANTAGONIST(S)</label>
-<input type="text">
-</div>
+        markerControlDiv.index = 1;
+        map.controls[google.maps.ControlPosition.LEFT_BOTTOM].push(
+          markerControlDiv
+        );
+      }
 
-</div>
+      const markerButton = document.querySelector("#bringToCenter");
 
+      markerButton.addEventListener("click", function(e) {
+        e.preventDefault();
+        map.setCenter({
+          lat: 51.513329,
+          lng: -0.08895
+        });
+      });
 
-<div class="chapters" id="chapters"></div>
+      function MarkerControl(controlDiv, map) {
+        const controlUI = document.createElement("div");
+        controlUI.style.backgroundColor = "#fff";
+        controlUI.style.border = "2px solid #fff";
+        controlUI.style.borderRadius = "3px";
+        controlUI.style.boxShadow = "0 2px 6px rgba(0,0,0,.3)";
+        controlUI.style.cursor = "pointer";
+        controlUI.style.margin = "10px";
+        controlDiv.appendChild(controlUI);
 
-<script src="script.js"></script>
+        const controlText = document.createElement("img");
+        controlText.style.padding = "5px";
+        controlText.title = "Click to add a Marker";
+        controlText.src =
+          "https://maps.google.com/mapfiles/ms/icons/red-pushpin.png";
+        controlUI.appendChild(controlText);
 
-</body>
+        // Setup the click event listeners: simply set the map to Chicago.
+        controlUI.addEventListener("click", function(e) {
+          new google.maps.Marker({
+            position: map.getCenter(),
+            map: map
+          });
+        });
+      }
+    </script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?callback=initMap&signed_in=true"
+      async
+      defer
+    ></script>
+  </body>
 </html>
