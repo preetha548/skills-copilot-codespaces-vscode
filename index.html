@@ -1,119 +1,471 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>Google Maps JavaScript API</title>
-    <meta name="viewport" content="initial-scale=1.0" />
-    <meta charset="utf-8" />
-    <style>
-      #map {
-        height: 100%;
-      }
-
-      html,
-      body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-      }
-    </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Flipkart Clone</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+    <link
+      rel="apple-touch-icon"
+      href="https://clonenowflipkart.netlify.app/public/logo.png"
+    />
+    <link
+      rel="icon"
+      href="https://clonenowflipkart.netlify.app/public/logo.png"
+    />
+    <meta
+      name="image"
+      property="og:image"
+      content="https://clonenowflipkart.netlify.app/public/logo.png"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
   </head>
   <body>
-    <div id="map"></div>
-    <div>
-      <!-- <button id="bringToCenter">Bring to Center</button> -->
+    <!-- Mobile Navbar container -->
+    <div id="mobile-navbar-container">
+      <div id="mobile-navbar-wrapper">
+        <div id="mobile-navbar-upper-part">
+          <div id="mobile-navbar-upper-left-part">
+            <div id="mobile-navbar-upper-left-part-bar">
+              <svg
+                fill="#fff"
+                height="20"
+                viewBox="0 0 24 24"
+                width="20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path>
+              </svg>
+            </div>
+            <img
+              src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/fk-explorePlus-c5de64.png"
+              alt="logo"
+              width="80px"
+            />
+          </div>
+          <div id="mobile-navbar-upper-right-part-options">
+            <div id="mobile-navbar-upper-right-part-options-cart">
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 15 15"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g fill="#fff" fill-rule="evenodd">
+                  <path
+                    d="m5.189 13.04c0 .996-.791 1.804-1.767 1.804-.976 0-1.767-.808-1.767-1.804 0-.996.791-1.804 1.767-1.804.976 0 1.767.808 1.767 1.804"
+                  ></path>
+                  <path
+                    d="m14.912 2.259h-14.298l2.247 6.917c.042.129.16.216.293.216h8.06c-.064.69-.629 1.841-1.702 1.841h-6.04l1.072 1.991h5.611c1.881 0 2.938-2.278 3.657-4.719.888-3.01 1.219-6.245 1.106-6.245"
+                  ></path>
+                  <path
+                    d="m.615 2.259l-.592-1.828c-.08-.207.069-.431.287-.431h1.482c.126 0 .24.079.287.198l.682 2.061c0 0-.63 1.642-1.942.066"
+                  ></path>
+                  <path
+                    d="m2.262.756c0 0 .498 1.503 2.234 1.503l-1.736.749-1.104-.749.607-1.503"
+                  ></path>
+                  <path
+                    d="m13.424 13.325c0 .837-.664 1.516-1.484 1.516-.82 0-1.484-.679-1.484-1.516 0-.837.664-1.516 1.484-1.516.82 0 1.484.679 1.484 1.516"
+                  ></path>
+                </g>
+              </svg>
+            </div>
+            <div id="mobile-navbar-upper-right-part-options-login">Login</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile search -->
+
+      <div id="mobile-search-container">
+        <div id="mobile-search-wrapper">
+          <div id="moblie-search-icon">
+            <svg
+              width="15"
+              height="15"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <title>Search Icon</title>
+              <path
+                d="M10.5 18C14.6421 18 18 14.6421 18 10.5C18 6.35786 14.6421 3 10.5 3C6.35786 3 3 6.35786 3 10.5C3 14.6421 6.35786 18 10.5 18Z"
+                stroke="#717478"
+                stroke-width="2.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></path>
+              <path
+                d="M16 16L21 21"
+                stroke="#717478"
+                stroke-width="2.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></path>
+            </svg>
+          </div>
+          <div style="width: 100%; display: block;">
+            <input
+              id="mobile-search-input"
+              type="text"
+              placeholder="Search for Products, Brands and More"
+            />
+          </div>
+        </div>
+      </div>
     </div>
-    <script>
-      let map, marker, infoWindow, infoWindowLatLang;
-      function initMap() {
-        map = new google.maps.Map(document.getElementById("map"), {
-          center: {
-            lat: 51.513329,
-            lng: -0.08895
-          },
-          zoom: 14,
-          mapTypeId: "roadmap",
-          scaleControl: true,
-          fullscreenControlOptions: {
-            position: google.maps.ControlPosition.RIGHT_BOTTOM
-          }
-        });
 
-        marker = new google.maps.Marker({
-          position: {
-            lat: 51.506821,
-            lng: -0.0879
-          },
-          map: map,
-          title: "City of London!"
-        });
+    <!-- Desktop Navbar -->
 
-        infoWindow = new google.maps.InfoWindow({
-          content: "<h2>London Bridge</h2>"
-        });
+    <nav id="navbar">
+      <div id="navbar-container">
+        <div id="navbar-left-wrapper">
+          <div>
+            <div id="navbar-left-flipkart-image-container">
+              <img
+                src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/flipkart-095e08.svg"
+                width="130"
+                height="22"
+                alt="Flipkart"
+                title="Flipkart"
+              />
+            </div>
+            <div id="navbar-explore-plus-wrapper">
+              <span id="navbar-explore-text">Explore</span>
+              <span id="navbar-explore-plus-text">Plus</span>
+              <img
+                id="navbar-explore-plus-image"
+                src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/plus-brand-bc165b.svg"
+                alt="plus"
+              />
+            </div>
+          </div>
 
-        marker.addListener("click", function() {
-          infoWindow.open(map, marker);
-        });
+          <div id="navbar-search-conatiner">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <title>Search Icon</title>
+              <path
+                d="M10.5 18C14.6421 18 18 14.6421 18 10.5C18 6.35786 14.6421 3 10.5 3C6.35786 3 3 6.35786 3 10.5C3 14.6421 6.35786 18 10.5 18Z"
+                stroke="#717478"
+                stroke-width="1.4"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></path>
+              <path
+                d="M16 16L21 21"
+                stroke="#717478"
+                stroke-width="1.4"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></path>
+            </svg>
+            <input
+              title="Search for Products, Brands and More"
+              type="text"
+              placeholder="Search for Products, Brands and More"
+            />
+          </div>
+        </div>
+        <div id="navbar-right-end-options">
+          <div id="navbar-more-seller-shop-btn">
+            <img
+              src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/Store-9eeae2.svg"
+              alt="Become a Seller"
+            />
 
-        map.addListener("click", function(mapsMouseEvent) {
-          if (infoWindowLatLang) infoWindowLatLang.close();
+            <span id="navbar-more-seller-shop-btn-text">Become a Seller</span>
+          </div>
+          <div id="navbar-more-login-btn">
+            <div id="navbar-more-login-btn-inner">
+              <img
+                id="navbar-login-btn-user-image"
+                src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/profile-815786.svg"
+                alt="Sign in"
+                width="24"
+                height="24"
+              />
 
-          infoWindowLatLang = new google.maps.InfoWindow({
-            position: mapsMouseEvent.latLng
-          });
-          infoWindowLatLang.setContent(mapsMouseEvent.latLng.toString());
-          infoWindowLatLang.open(map);
-        });
+              <span id="navbar-more-login-btn-inner-text">Sign in</span>
+              <img
+                id="navbar-login-btn-down-arrow"
+                src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTQiIGhlaWdodD0iMTEiIHZpZXdCb3g9IjAgMCAxNCAxMSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGcgZmlsdGVyPSJ1cmwoI2ZpbHRlcjBfZF80OTc0Xzc1OTY5KSI+CjxwYXRoIGQ9Ik0zIDJMNyA2TDExIDIiIHN0cm9rZT0iIzExMTExMiIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8L2c+CjxkZWZzPgo8ZmlsdGVyIGlkPSJmaWx0ZXIwX2RfNDk3NF83NTk2OSIgeD0iMC4yNSIgeT0iMC4yNSIgd2lkdGg9IjEzLjUiIGhlaWdodD0iOS44MTI1IiBmaWx0ZXJVbml0cz0idXNlclNwYWNlT25Vc2UiIGNvbG9yLWludGVycG9sYXRpb24tZmlsdGVycz0ic1JHQiI+CjxmZUZsb29kIGZsb29kLW9wYWNpdHk9IjAiIHJlc3VsdD0iQmFja2dyb3VuZEltYWdlRml4Ii8+CjxmZUNvbG9yTWF0cml4IGluPSJTb3VyY2VBbHBoYSIgdHlwZT0ibWF0cml4IiB2YWx1ZXM9IjAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDEyNyAwIiByZXN1bHQ9ImhhcmRBbHBoYSIvPgo8ZmVPZmZzZXQgZHk9IjEiLz4KPGZlR2F1c3NpYW5CbHVyIHN0ZERldmlhdGlvbj0iMSIvPgo8ZmVDb2xvck1hdHJpeCB0eXBlPSJtYXRyaXgiIHZhbHVlcz0iMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMC4xNiAwIi8+CjxmZUJsZW5kIG1vZGU9Im5vcm1hbCIgaW4yPSJCYWNrZ3JvdW5kSW1hZ2VGaXgiIHJlc3VsdD0iZWZmZWN0MV9kcm9wU2hhZG93XzQ5NzRfNzU5NjkiLz4KPGZlQmxlbmQgbW9kZT0ibm9ybWFsIiBpbj0iU291cmNlR3JhcGhpYyIgaW4yPSJlZmZlY3QxX2Ryb3BTaGFkb3dfNDk3NF83NTk2OSIgcmVzdWx0PSJzaGFwZSIvPgo8L2ZpbHRlcj4KPC9kZWZzPgo8L3N2Zz4K"
+                alt="Chevron"
+                width="12"
+                height="12"
+              />
+            </div>
+          </div>
+          <div id="navbar-more-cart-btn">
+            <img
+              src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/header_cart-eed150.svg"
+              alt="Cart"
+              width="24"
+              height="24"
+            />
+            <span id="navbar-more-cart-btn-text">Cart</span>
+          </div>
+          <div id="navbar-more-option-btn">
+            <img
+              id="navbar-more-option-image"
+              src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/header_3verticalDots-ea7819.svg"
+              width="24"
+              height="24"
+              alt="Dropdown with more help links"
+            />
+          </div>
+        </div>
+      </div>
+    </nav>
 
-        const markerControlDiv = document.createElement("div");
-        const markerControl = new MarkerControl(markerControlDiv, map);
+    <!-- Mobile  slider-->
 
-        markerControlDiv.index = 1;
-        map.controls[google.maps.ControlPosition.LEFT_BOTTOM].push(
-          markerControlDiv
-        );
-      }
+    <section id="home-page-mobile-slider-container">
+      <!-- Slider main container -->
+      <div class="swiper">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+          <!-- Slides -->
+          <div class="swiper-slide">
+            <img
+              src="https://rukminim1.flixcart.com/fk-p-flap/1350/600/image/446a2bf3177e3c26.jpg?q=100"
+              alt="Slider"
+              width="100%"
+            />
+          </div>
+          <div class="swiper-slide">
+            <img
+              src="https://rukminim1.flixcart.com/fk-p-flap/1350/600/image/884eb6d3e7bcf760.jpg?q=100"
+              alt="Slider"
+              width="100%"
+            />
+          </div>
+          <div class="swiper-slide">
+            <img
+              src="https://rukminim1.flixcart.com/fk-p-flap/1350/600/image/c09d888d86165a3e.png?q=100"
+              alt="Slider"
+              width="100%"
+            />
+          </div>
 
-      const markerButton = document.querySelector("#bringToCenter");
+          <div class="swiper-slide">
+            <img
+              src="https://rukminim1.flixcart.com/fk-p-flap/1350/600/image/7d0686f399c872d2.jpg?q=100"
+              alt="Slider"
+              width="100%"
+            />
+          </div>
+        </div>
+        <!-- If we need pagination -->
+        <div class="swiper-pagination"></div>
+      </div>
+      <!-- <div id="home-page-slider-wrapper"></div> -->
+    </section>
 
-      markerButton.addEventListener("click", function(e) {
-        e.preventDefault();
-        map.setCenter({
-          lat: 51.513329,
-          lng: -0.08895
-        });
-      });
+    <!-- front options -->
 
-      function MarkerControl(controlDiv, map) {
-        const controlUI = document.createElement("div");
-        controlUI.style.backgroundColor = "#fff";
-        controlUI.style.border = "2px solid #fff";
-        controlUI.style.borderRadius = "3px";
-        controlUI.style.boxShadow = "0 2px 6px rgba(0,0,0,.3)";
-        controlUI.style.cursor = "pointer";
-        controlUI.style.margin = "10px";
-        controlDiv.appendChild(controlUI);
+    <section id="front-options-container">
+      <div id="front-options-card">
+        <div class="front-options-sub-card">
+          <img
+            class="front-options-card-image"
+            alt="Top Offers"
+            src="https://rukminim1.flixcart.com/fk-p-flap/80/80/image/50379f65f7b59622.png?q=100"
+          />
+          <div>
+            Top Offers
+          </div>
+        </div>
+        <div class="front-options-sub-card">
+          <img
+            class="front-options-card-image"
+            alt="Mobiles Tablets"
+            src="https://rukminim1.flixcart.com/fk-p-flap/80/80/image/0a0243119f02f7a5.png?q=100"
+          />
+          <div>
+            Mobiles & Tablets
+          </div>
+        </div>
+        <div class="front-options-sub-card">
+          <img
+            class="front-options-card-image"
+            alt="Electronics"
+            src="https://rukminim1.flixcart.com/fk-p-flap/80/80/image/da4491af4ee551d6.png?q=100"
+          />
+          <div>
+            Electronics
+          </div>
+        </div>
+        <div class="front-options-sub-card">
+          <img
+            class="front-options-card-image"
+            alt="TVs Appliances"
+            src="https://rukminim1.flixcart.com/fk-p-flap/80/80/image/3a39bad95503b051.png?q=100"
+          />
+          <div>
+            Tvs & Appliances
+          </div>
+        </div>
+        <div class="front-options-sub-card">
+          <img
+            class="front-options-card-image"
+            alt="Fashion"
+            src="https://rukminim1.flixcart.com/fk-p-flap/80/80/image/f7b2a4eeb35a8c9f.png?q=100"
+          />
+          <div>
+            Fashion
+          </div>
+        </div>
+        <div class="front-options-sub-card">
+          <img
+            class="front-options-card-image"
+            alt="Beauty"
+            src="https://rukminim1.flixcart.com/fk-p-flap/80/80/image/e83a5f27b01d9a7e.png?q=100"
+          />
+          <div>
+            Beauty
+          </div>
+        </div>
+        <div class="front-options-sub-card">
+          <img
+            class="front-options-card-image"
+            alt="Home Kitchen"
+            src="https://rukminim1.flixcart.com/fk-p-flap/80/80/image/a8cfa33c7206ae57.png?q=100"
+          />
+          <div>
+            Home & Kitchen
+          </div>
+        </div>
+        <div class="front-options-sub-card">
+          <img
+            class="front-options-card-image"
+            alt="Furniture"
+            src="https://rukminim1.flixcart.com/fk-p-flap/80/80/image/4e0bdf8567ecb960.png?q=100"
+          />
+          <div>
+            Furniture
+          </div>
+        </div>
+        <div class="front-options-sub-card">
+          <img
+            class="front-options-card-image"
+            alt="Flights"
+            src="https://rukminim1.flixcart.com/fk-p-flap/80/80/image/def8193d5a7380ee.png?q=100"
+          />
+          <div>
+            Flights
+          </div>
+        </div>
+        <div class="front-options-sub-card">
+          <img
+            class="front-options-card-image"
+            alt="Grocery"
+            src="https://rukminim1.flixcart.com/fk-p-flap/80/80/image/aecfaba5969b96dd.png?q=100"
+          />
+          <div>
+            Grocery
+          </div>
+        </div>
+      </div>
+    </section>
 
-        const controlText = document.createElement("img");
-        controlText.style.padding = "5px";
-        controlText.title = "Click to add a Marker";
-        controlText.src =
-          "https://maps.google.com/mapfiles/ms/icons/red-pushpin.png";
-        controlUI.appendChild(controlText);
+    <!-- Slider -->
+    <section id="home-page-slider-container">
+      <!-- Slider main container -->
+      <div class="swiper">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+          <!-- Slides -->
+          <div class="swiper-slide">
+            <img
+              src="https://rukminim1.flixcart.com/fk-p-flap/1600/270/image/64052861692b9bff.jpg?q=100"
+              alt="Slider"
+              width="100%"
+            />
+          </div>
+          <div class="swiper-slide">
+            <img
+              src="https://rukminim1.flixcart.com/fk-p-flap/1000/170/image/8b7586d209ff39bd.jpg?q=100"
+              alt="Slider"
+              width="100%"
+            />
+          </div>
+          <div class="swiper-slide">
+            <img
+              src="https://rukminim1.flixcart.com/fk-p-flap/1000/170/image/8db16165a9f1ff9a.png?q=100"
+              alt="Slider"
+              width="100%"
+            />
+          </div>
 
-        // Setup the click event listeners: simply set the map to Chicago.
-        controlUI.addEventListener("click", function(e) {
-          new google.maps.Marker({
-            position: map.getCenter(),
-            map: map
-          });
-        });
-      }
-    </script>
-    <script
-      src="https://maps.googleapis.com/maps/api/js?callback=initMap&signed_in=true"
-      async
-      defer
-    ></script>
+          <div class="swiper-slide">
+            <img
+              src="https://rukminim1.flixcart.com/fk-p-flap/1000/170/image/b086f75214cff988.jpg?q=100"
+              alt="Slider"
+              width="100%"
+            />
+          </div>
+        </div>
+        <!-- If we need pagination -->
+        <div class="swiper-pagination"></div>
+
+        <!-- If we need navigation buttons -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
+      <!-- <div id="home-page-slider-wrapper"></div> -->
+    </section>
+
+    <!-- Offer Section -->
+
+    <section id="home-offer-section">
+      <img
+        src="https://rukminim1.flixcart.com/fk-p-flap/1600/140/image/f0015fa73d07b3c8.jpg?q=100"
+        alt="offer"
+        width="100%"
+      />
+    </section>
+
+    <!--Mobile Offer Section -->
+
+    <section id="home-mobile-offer-section">
+      <img
+        src="https://rukminim1.flixcart.com/fk-p-flap/506/112/image/3670ffc16986b335.png?q=100"
+        alt="offer"
+        width="100%"
+      />
+    </section>
+
+    <!-- top products offers -->
+
+    <section id="home-page-top-products-offers-section">
+      <div id="home-page-top-products-offers-wrapper">
+        <div id="home-page-top-products-offers-title">Top Offers</div>
+        <div id="home-page-top-products-offers-card"></div>
+      </div>
+    </section>
+
+    <!-- top products deals on electronics -->
+
+    <section id="home-page-top-products-electronics-section">
+      <div id="home-page-top-products-electronics-wrapper">
+        <div id="home-page-top-products-electronics-title">
+          Top Deals on Electronics
+        </div>
+        <div id="home-page-top-products-electronics-card"></div>
+      </div>
+    </section>
+
+    <script src="script.js" type="module"></script>
   </body>
 </html>
