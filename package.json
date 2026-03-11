@@ -1,8 +1,8 @@
 {
-  "name": "google-maps-javascript-api",
+  "name": "movie-marathon",
   "version": "1.0.0",
   "description": "",
-  "main": "maps-01.html",
+  "main": "index.html",
   "scripts": {
     "start": "serve"
   },
