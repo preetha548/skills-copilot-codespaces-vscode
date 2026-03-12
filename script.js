@@ -1,5 +1,7 @@
-function submitForm(){
+const buttons = document.querySelectorAll(".btn");
 
-alert("Form Submitted Successfully");
-
-}
+buttons.forEach(button => {
+    button.addEventListener("click", () => {
+        alert("Perfume added to cart!");
+    });
+});

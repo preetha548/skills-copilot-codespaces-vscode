@@ -3,196 +3,49 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hotel Bistro Pre-Order Form</title>
-
-<style>
-
-body{
-    font-family: Arial, sans-serif;
-    background:#e8cfcf;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    min-height:100vh;
-}
-
-.container{
-    width:650px;
-}
-
-h1{
-    text-align:center;
-}
-
-.info{
-    text-align:center;
-    font-size:13px;
-    margin-bottom:20px;
-}
-
-label{
-    display:block;
-    margin-top:15px;
-    font-weight:bold;
-}
-
-.row{
-    display:flex;
-    gap:10px;
-}
-
-.row input{
-    flex:1;
-}
-
-input{
-    width:100%;
-    padding:10px;
-    margin-top:5px;
-    border:1px solid #999;
-    border-radius:4px;
-}
-
-.options{
-    display:flex;
-    justify-content:space-between;
-    margin-top:8px;
-}
-
-.options label{
-    font-weight:normal;
-}
-
-.captcha{
-    background:white;
-    border:1px solid #ccc;
-    padding:15px;
-    width:250px;
-    margin-top:10px;
-}
-
-button{
-    margin-top:20px;
-    padding:10px 20px;
-    border:none;
-    background:black;
-    color:white;
-    cursor:pointer;
-}
-
-button:hover{
-    background:#333;
-}
-
-.error{
-    color:red;
-    font-size:13px;
-}
-
-.success{
-    color:green;
-    margin-top:10px;
-}
-
-</style>
+<title>Premium Perfume</title>
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<div class="container">
+<header>
+    <div class="logo">Perfume</div>
 
-<h1>Hotel - Bistro Pre-Order Form</h1>
+    <nav>
+        <a href="#">About</a>
+        <a href="#">Features</a>
+        <a href="#">Gallery</a>
+    </nav>
+</header>
 
-<p class="info">
-All pre-orders must be received before 10am for lunch bookings and 4pm for dinner bookings
-and are only valid upon confirmation with the Hotel Reception.
-</p>
 
-<form id="orderForm">
+<section class="hero">
 
-<label>Booking Name:</label>
-<div class="row">
-<input type="text" id="firstName" placeholder="First">
-<input type="text" id="lastName" placeholder="Last">
-</div>
+    <div class="hero-text">
+        <p class="tag">NEW COLLECTION</p>
+        <h1>PREMIUM PERFUME</h1>
+        <p class="desc">
+            Discover the elegance of luxury fragrance designed to inspire
+            confidence and sophistication.
+        </p>
 
-<label>Room number / Contact number:</label>
-<div class="row">
-<input type="text" id="room">
-<input type="text" id="phone" placeholder="### ### ####">
-</div>
+        <div class="buttons">
+            <button class="btn primary">Buy Now</button>
+            <button class="btn">Explore</button>
+            <button class="btn">Details</button>
+        </div>
+    </div>
 
-<label>Breakfast ordered:</label>
-<div class="options">
-<label><input type="radio" name="breakfast"> Option 1</label>
-<label><input type="radio" name="breakfast"> Option 2</label>
-<label><input type="radio" name="breakfast"> Option 3</label>
-</div>
 
-<label>Starters:</label>
-<div class="options">
-<label><input type="radio" name="starter"> Menu 1</label>
-<label><input type="radio" name="starter"> Menu 2</label>
-<label><input type="radio" name="starter"> Menu 3</label>
-</div>
+    <div class="hero-image">
+        <img src="https://images.unsplash.com/photo-1592945403244-b3fbafd7f539"
+        alt="perfume">
+    </div>
 
-<label>Desserts:</label>
-<div class="options">
-<label><input type="radio" name="dessert"> Desert 1</label>
-<label><input type="radio" name="dessert"> Desert 2</label>
-<label><input type="radio" name="dessert"> Desert 3</label>
-</div>
+</section>
 
-<label>Verification*</label>
-
-<div class="captcha">
-<input type="checkbox" id="robot"> I'm not a robot
-</div>
-
-<br>
-
-<button type="submit">Submit</button>
-
-<p id="message"></p>
-
-</form>
-
-</div>
-
-<script>
-
-document.getElementById("orderForm").addEventListener("submit", function(e){
-
-e.preventDefault();
-
-let first = document.getElementById("firstName").value;
-let last = document.getElementById("lastName").value;
-let room = document.getElementById("room").value;
-let phone = document.getElementById("phone").value;
-let robot = document.getElementById("robot").checked;
-
-let message = document.getElementById("message");
-
-if(first === "" || last === "" || room === "" || phone === "")
-{
-    message.innerHTML = "Please fill in all fields.";
-    message.className = "error";
-    return;
-}
-
-if(!robot)
-{
-    message.innerHTML = "Please verify that you are not a robot.";
-    message.className = "error";
-    return;
-}
-
-message.innerHTML = "Form submitted successfully!";
-message.className = "success";
-
-});
-
-</script>
+<script src="script.js"></script>
 
 </body>
 </html>
