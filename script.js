@@ -1,6 +1,5 @@
-function showMessage(){
+function submitForm(){
 
-document.getElementById("message").innerHTML =
-"Thank you for forgiving me ❤️";
+alert("Form Submitted Successfully");
 
 }

@@ -1,40 +1,77 @@
 body{
-    font-family: Arial;
-    background: linear-gradient(to right,#ff9a9e,#fad0c4);
-    height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
+font-family: Arial;
+background:#f5f5f5;
 }
 
 .container{
-    background:white;
-    padding:40px;
-    border-radius:10px;
-    text-align:center;
-    box-shadow:0 0 10px rgba(0,0,0,0.2);
+width:800px;
+margin:auto;
+background:white;
+padding:30px;
+border:1px solid #ccc;
 }
 
-h1{
-    color:#ff4d4d;
+h2{
+text-align:center;
+}
+
+.note{
+font-size:14px;
+margin-bottom:20px;
+}
+
+.proof{
+display:flex;
+justify-content:space-between;
+}
+
+.proof label{
+display:block;
+margin:5px 0;
+}
+
+.form-section{
+margin-top:20px;
+}
+
+.form-section label{
+display:block;
+margin-top:10px;
+}
+
+.box{
+width:250px;
+padding:5px;
+border:1px solid black;
+}
+
+.optional label{
+display:block;
+margin-top:10px;
+}
+
+.long{
+width:100%;
+padding:6px;
+border:1px solid black;
+}
+
+.declaration{
+margin-top:20px;
+font-size:14px;
+}
+
+.sign{
+margin-top:20px;
+display:flex;
+gap:20px;
 }
 
 button{
-    padding:10px 20px;
-    font-size:18px;
-    border:none;
-    border-radius:5px;
-    background:#ff4d4d;
-    color:white;
-    cursor:pointer;
-}
-
-button:hover{
-    background:#e60000;
-}
-
-#message{
-    margin-top:20px;
-    font-size:20px;
-    color:green;
+margin-top:20px;
+padding:10px 20px;
+background:#2b7cff;
+color:white;
+border:none;
+cursor:pointer;
 }

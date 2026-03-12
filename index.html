@@ -1,8 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<title>Digital Sorry</title>
+<title>Consumer Information Sheet</title>
 <link rel="stylesheet" href="style.css">
 </head>
 
@@ -10,16 +9,103 @@
 
 <div class="container">
 
-<h1>I'm Really Sorry 😔</h1>
+<h2>CONSUMER INFORMATION SHEET (Page 2)</h2>
 
-<p>I didn't mean to hurt you.</p>
+<p class="note">
+At least one of the following documents of Proof of Address is Mandatory.
+Kindly tick the document provided for Proof of Address
+</p>
 
-<button onclick="showMessage()">Forgive Me?</button>
+<div class="proof">
 
-<p id="message"></p>
+<div class="left">
+<label><input type="checkbox"> Aadhaar (UID)</label>
+<label><input type="checkbox"> Lease agreement / rent receipt</label>
+<label><input type="checkbox"> Telephone/Electricity bill</label>
+<label><input type="checkbox"> Self declaration attested</label>
+<label><input type="checkbox"> Flat allotment letter</label>
+<label><input type="checkbox"> LIC Policy</label>
+</div>
+
+<div class="right">
+<label><input type="checkbox"> Driving License</label>
+<label><input type="checkbox"> Voter ID</label>
+<label><input type="checkbox"> Passport</label>
+<label><input type="checkbox"> Ration Card</label>
+<label><input type="checkbox"> House registration document</label>
+</div>
+
+</div>
+
+<hr>
+
+<div class="form-section">
+
+<label>Do you have PAN Number?</label>
+<input type="text" class="box">
+
+<label>Do you have Passport?</label>
+<input type="text" class="box">
+
+<label>Do you have Driving License?</label>
+<input type="text" class="box">
+
+<label>Do you have Ration Card?</label>
+<input type="text" class="box">
+
+<label>Do you have UIDAI Aadhaar No?</label>
+<input type="text" class="box">
+
+<label>Do you have Voter ID?</label>
+<input type="text" class="box">
+
+<label>Do you have ID Issued by Central Govt?</label>
+<input type="text" class="box">
+
+</div>
+
+<h3>Optional Details</h3>
+
+<div class="optional">
+
+<label>Bank Name</label>
+<input type="text" class="long">
+
+<label>Branch & Address</label>
+<input type="text" class="long">
+
+<label>IFSC Code</label>
+<input type="text" class="long">
+
+<label>Account Number</label>
+<input type="text" class="long">
+
+</div>
+
+<div class="declaration">
+
+<p>
+Declaration: I declare that the information provided by me on the above form is true
+and correct to the best of my knowledge.
+</p>
+
+</div>
+
+<div class="sign">
+
+<label>Name & Signature of Customer</label>
+<input type="text">
+
+<label>Date</label>
+<input type="date">
+
+</div>
+
+<button onclick="submitForm()">Submit</button>
 
 </div>
 
 <script src="script.js"></script>
+
 </body>
 </html>
