@@ -1,7 +1,12 @@
-const buttons = document.querySelectorAll(".btn");
+// Simple animation for menu sections
 
-buttons.forEach(button => {
-    button.addEventListener("click", () => {
-        alert("Perfume added to cart!");
-    });
+let sections = document.querySelectorAll(".menu-section");
+
+sections.forEach((section, index) => {
+    section.style.opacity = 0;
+
+    setTimeout(() => {
+        section.style.transition = "1s";
+        section.style.opacity = 1;
+    }, index * 500);
 });
