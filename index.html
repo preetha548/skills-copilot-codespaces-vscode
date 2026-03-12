@@ -1,111 +1,198 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Consumer Information Sheet</title>
-<link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hotel Bistro Pre-Order Form</title>
+
+<style>
+
+body{
+    font-family: Arial, sans-serif;
+    background:#e8cfcf;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+}
+
+.container{
+    width:650px;
+}
+
+h1{
+    text-align:center;
+}
+
+.info{
+    text-align:center;
+    font-size:13px;
+    margin-bottom:20px;
+}
+
+label{
+    display:block;
+    margin-top:15px;
+    font-weight:bold;
+}
+
+.row{
+    display:flex;
+    gap:10px;
+}
+
+.row input{
+    flex:1;
+}
+
+input{
+    width:100%;
+    padding:10px;
+    margin-top:5px;
+    border:1px solid #999;
+    border-radius:4px;
+}
+
+.options{
+    display:flex;
+    justify-content:space-between;
+    margin-top:8px;
+}
+
+.options label{
+    font-weight:normal;
+}
+
+.captcha{
+    background:white;
+    border:1px solid #ccc;
+    padding:15px;
+    width:250px;
+    margin-top:10px;
+}
+
+button{
+    margin-top:20px;
+    padding:10px 20px;
+    border:none;
+    background:black;
+    color:white;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#333;
+}
+
+.error{
+    color:red;
+    font-size:13px;
+}
+
+.success{
+    color:green;
+    margin-top:10px;
+}
+
+</style>
 </head>
 
 <body>
 
 <div class="container">
 
-<h2>CONSUMER INFORMATION SHEET (Page 2)</h2>
+<h1>Hotel - Bistro Pre-Order Form</h1>
 
-<p class="note">
-At least one of the following documents of Proof of Address is Mandatory.
-Kindly tick the document provided for Proof of Address
+<p class="info">
+All pre-orders must be received before 10am for lunch bookings and 4pm for dinner bookings
+and are only valid upon confirmation with the Hotel Reception.
 </p>
 
-<div class="proof">
+<form id="orderForm">
 
-<div class="left">
-<label><input type="checkbox"> Aadhaar (UID)</label>
-<label><input type="checkbox"> Lease agreement / rent receipt</label>
-<label><input type="checkbox"> Telephone/Electricity bill</label>
-<label><input type="checkbox"> Self declaration attested</label>
-<label><input type="checkbox"> Flat allotment letter</label>
-<label><input type="checkbox"> LIC Policy</label>
+<label>Booking Name:</label>
+<div class="row">
+<input type="text" id="firstName" placeholder="First">
+<input type="text" id="lastName" placeholder="Last">
 </div>
 
-<div class="right">
-<label><input type="checkbox"> Driving License</label>
-<label><input type="checkbox"> Voter ID</label>
-<label><input type="checkbox"> Passport</label>
-<label><input type="checkbox"> Ration Card</label>
-<label><input type="checkbox"> House registration document</label>
+<label>Room number / Contact number:</label>
+<div class="row">
+<input type="text" id="room">
+<input type="text" id="phone" placeholder="### ### ####">
 </div>
 
+<label>Breakfast ordered:</label>
+<div class="options">
+<label><input type="radio" name="breakfast"> Option 1</label>
+<label><input type="radio" name="breakfast"> Option 2</label>
+<label><input type="radio" name="breakfast"> Option 3</label>
 </div>
 
-<hr>
-
-<div class="form-section">
-
-<label>Do you have PAN Number?</label>
-<input type="text" class="box">
-
-<label>Do you have Passport?</label>
-<input type="text" class="box">
-
-<label>Do you have Driving License?</label>
-<input type="text" class="box">
-
-<label>Do you have Ration Card?</label>
-<input type="text" class="box">
-
-<label>Do you have UIDAI Aadhaar No?</label>
-<input type="text" class="box">
-
-<label>Do you have Voter ID?</label>
-<input type="text" class="box">
-
-<label>Do you have ID Issued by Central Govt?</label>
-<input type="text" class="box">
-
+<label>Starters:</label>
+<div class="options">
+<label><input type="radio" name="starter"> Menu 1</label>
+<label><input type="radio" name="starter"> Menu 2</label>
+<label><input type="radio" name="starter"> Menu 3</label>
 </div>
 
-<h3>Optional Details</h3>
+<label>Desserts:</label>
+<div class="options">
+<label><input type="radio" name="dessert"> Desert 1</label>
+<label><input type="radio" name="dessert"> Desert 2</label>
+<label><input type="radio" name="dessert"> Desert 3</label>
+</div>
 
-<div class="optional">
+<label>Verification*</label>
 
-<label>Bank Name</label>
-<input type="text" class="long">
+<div class="captcha">
+<input type="checkbox" id="robot"> I'm not a robot
+</div>
 
-<label>Branch & Address</label>
-<input type="text" class="long">
+<br>
 
-<label>IFSC Code</label>
-<input type="text" class="long">
+<button type="submit">Submit</button>
 
-<label>Account Number</label>
-<input type="text" class="long">
+<p id="message"></p>
+
+</form>
 
 </div>
 
-<div class="declaration">
+<script>
 
-<p>
-Declaration: I declare that the information provided by me on the above form is true
-and correct to the best of my knowledge.
-</p>
+document.getElementById("orderForm").addEventListener("submit", function(e){
 
-</div>
+e.preventDefault();
 
-<div class="sign">
+let first = document.getElementById("firstName").value;
+let last = document.getElementById("lastName").value;
+let room = document.getElementById("room").value;
+let phone = document.getElementById("phone").value;
+let robot = document.getElementById("robot").checked;
 
-<label>Name & Signature of Customer</label>
-<input type="text">
+let message = document.getElementById("message");
 
-<label>Date</label>
-<input type="date">
+if(first === "" || last === "" || room === "" || phone === "")
+{
+    message.innerHTML = "Please fill in all fields.";
+    message.className = "error";
+    return;
+}
 
-</div>
+if(!robot)
+{
+    message.innerHTML = "Please verify that you are not a robot.";
+    message.className = "error";
+    return;
+}
 
-<button onclick="submitForm()">Submit</button>
+message.innerHTML = "Form submitted successfully!";
+message.className = "success";
 
-</div>
+});
 
-<script src="script.js"></script>
+</script>
 
 </body>
 </html>
