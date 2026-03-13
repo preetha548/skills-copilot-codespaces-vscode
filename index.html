@@ -2,54 +2,131 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Eggless Rose Milk Cake</title>
-<link rel="stylesheet" href="style.css">
+<title>Maravalli Kilangu Parotta Recipe</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background: #fff8f0;
+    margin:0;
+    padding:0;
+}
+
+.container{
+    width:80%;
+    margin:auto;
+    padding:20px;
+}
+
+h1{
+    text-align:center;
+    color:#b33c00;
+}
+
+.recipe-card{
+    background:white;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 0 10px rgba(0,0,0,0.2);
+}
+
+img{
+    width:100%;
+    border-radius:10px;
+}
+
+h2{
+    color:#444;
+}
+
+ul{
+    line-height:1.8;
+}
+
+button{
+    background:#ff6600;
+    color:white;
+    border:none;
+    padding:10px 20px;
+    border-radius:5px;
+    cursor:pointer;
+    margin-top:10px;
+}
+
+button:hover{
+    background:#e65c00;
+}
+
+#steps{
+    display:none;
+    margin-top:10px;
+}
+</style>
 </head>
 
 <body>
 
 <div class="container">
 
-<h1>🌹 Eggless Rose Milk Cake</h1>
+<h1>Maravalli Kilangu Parotta</h1>
 
-<img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjIA0ecy6VG84fr8U1YXMViUvdEK2Q6MNQEfruY0j6coy8sSrSVu4lanAvLqjYdfzuyxh4WWofI1WW7oqDghb5zAm18ylJciUVmuIOieZWMhJAHeNp3gTjo4sYavB409r089jKpc8hAskGCzvDmPzSU8k9W6nflsNXYFb8rn4_8mPlEB0vJpHOVBmnC/s2941/Slide1-001.JPG" alt="Rose Milk Cake">
+<div class="recipe-card">
+
+<img src="https://i.ytimg.com/vi/JfAElC82O7U/oardefault.jpg?sqp=-oaymwEkCJUDENAFSFqQAgHyq4qpAxMIARUAAAAAJQAAyEI9AICiQ3gB&rs=AOn4CLCOYQsryMPNjLuX6jWOmh0790ObzQ" alt="Maravalli Kilangu Parotta">
 
 <h2>Ingredients</h2>
+
 <ul>
-<li>1 cup Maida (All-purpose flour)</li>
-<li>1/2 cup Sugar</li>
-<li>1 tsp Baking powder</li>
-<li>1/2 tsp Baking soda</li>
-<li>1/2 cup Milk</li>
-<li>1/4 cup Oil</li>
-<li>1 tsp Vanilla essence</li>
-<li>1 tbsp Rose syrup</li>
-<li>Few drops pink food color</li>
+<li>2 cups boiled Maravalli Kilangu (Tapioca)</li>
+<li>1 cup wheat flour</li>
+<li>1 small onion (chopped)</li>
+<li>2 green chilies</li>
+<li>1 tsp ginger (grated)</li>
+<li>½ tsp turmeric powder</li>
+<li>½ tsp cumin seeds</li>
+<li>Salt to taste</li>
+<li>2 tbsp coriander leaves</li>
+<li>Oil for cooking</li>
 </ul>
 
-<button onclick="showRecipe()">Show Preparation Steps</button>
+<button onclick="showSteps()">Show Recipe Steps</button>
 
-<div id="recipe" class="hidden">
+<div id="steps">
 
 <h2>Preparation Steps</h2>
 
 <ol>
-<li>Preheat oven to 180°C.</li>
-<li>Mix flour, baking powder, and baking soda.</li>
-<li>In another bowl mix sugar, milk, oil, vanilla, rose syrup and color.</li>
-<li>Combine wet and dry ingredients.</li>
-<li>Pour batter into greased tray.</li>
-<li>Bake for 25-30 minutes.</li>
-<li>Prepare rose milk and pour over cake.</li>
-<li>Add whipped cream and pistachios.</li>
+<li>Peel and boil the maravalli kilangu until soft.</li>
+<li>Mash the boiled tapioca well.</li>
+<li>Add wheat flour, onion, green chili, ginger, turmeric, cumin, and salt.</li>
+<li>Mix everything and knead into a soft dough.</li>
+<li>Make small balls and roll into round parottas.</li>
+<li>Heat a tawa and cook the parotta with oil.</li>
+<li>Cook both sides until golden brown.</li>
+<li>Serve hot with curry or chutney.</li>
 
 </ol>
 
 </div>
 
 </div>
+</div>
 
-<script src="script.js"></script>
+<script>
+
+function showSteps(){
+
+var steps=document.getElementById("steps");
+
+if(steps.style.display==="none"){
+steps.style.display="block";
+}else{
+steps.style.display="none";
+}
+
+}
+
+</script>
 
 </body>
 </html>
