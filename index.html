@@ -2,64 +2,61 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Maravalli Kilangu Parotta Recipe</title>
+<title>Masala Milk Recipe</title>
 
 <style>
 body{
     font-family: Arial, sans-serif;
-    background: #fff8f0;
+    background: #fff5e6;
     margin:0;
     padding:0;
 }
 
 .container{
-    width:80%;
-    margin:auto;
-    padding:20px;
-}
-
-h1{
-    text-align:center;
-    color:#b33c00;
-}
-
-.recipe-card{
+    width: 60%;
+    margin: auto;
+    margin-top:40px;
     background:white;
-    padding:20px;
+    padding:30px;
     border-radius:10px;
     box-shadow:0 0 10px rgba(0,0,0,0.2);
 }
 
-img{
-    width:100%;
-    border-radius:10px;
+h1{
+    text-align:center;
+    color:#b5651d;
 }
 
 h2{
     color:#444;
 }
 
-ul{
-    line-height:1.8;
+ul,ol{
+    margin-left:20px;
 }
 
 button{
-    background:#ff6600;
-    color:white;
-    border:none;
     padding:10px 20px;
+    background:#ff9800;
+    border:none;
+    color:white;
+    font-size:16px;
     border-radius:5px;
     cursor:pointer;
-    margin-top:10px;
 }
 
 button:hover{
-    background:#e65c00;
+    background:#e68900;
 }
 
 #steps{
     display:none;
-    margin-top:10px;
+    margin-top:20px;
+}
+
+img{
+    width:100%;
+    border-radius:10px;
 }
 </style>
 </head>
@@ -68,25 +65,20 @@ button:hover{
 
 <div class="container">
 
-<h1>Maravalli Kilangu Parotta</h1>
+<h1>🥛 Masala Milk Recipe</h1>
 
-<div class="recipe-card">
-
-<img src="https://i.ytimg.com/vi/JfAElC82O7U/oardefault.jpg?sqp=-oaymwEkCJUDENAFSFqQAgHyq4qpAxMIARUAAAAAJQAAyEI9AICiQ3gB&rs=AOn4CLCOYQsryMPNjLuX6jWOmh0790ObzQ" alt="Maravalli Kilangu Parotta">
+<img src="https://maayeka.com/wp-content/uploads/2024/01/1-masala-milk-masala-doodh-recipe-1-of-1.jpg">
 
 <h2>Ingredients</h2>
 
 <ul>
-<li>2 cups boiled Maravalli Kilangu (Tapioca)</li>
-<li>1 cup wheat flour</li>
-<li>1 small onion (chopped)</li>
-<li>2 green chilies</li>
-<li>1 tsp ginger (grated)</li>
-<li>½ tsp turmeric powder</li>
-<li>½ tsp cumin seeds</li>
-<li>Salt to taste</li>
-<li>2 tbsp coriander leaves</li>
-<li>Oil for cooking</li>
+<li>2 cups Milk</li>
+<li>1 tbsp Sugar</li>
+<li>4 Almonds (Badam)</li>
+<li>4 Pistachios</li>
+<li>1/4 tsp Cardamom powder</li>
+<li>A pinch of Saffron</li>
+<li>A pinch of Turmeric (optional)</li>
 </ul>
 
 <button onclick="showSteps()">Show Recipe Steps</button>
@@ -96,32 +88,29 @@ button:hover{
 <h2>Preparation Steps</h2>
 
 <ol>
-<li>Peel and boil the maravalli kilangu until soft.</li>
-<li>Mash the boiled tapioca well.</li>
-<li>Add wheat flour, onion, green chili, ginger, turmeric, cumin, and salt.</li>
-<li>Mix everything and knead into a soft dough.</li>
-<li>Make small balls and roll into round parottas.</li>
-<li>Heat a tawa and cook the parotta with oil.</li>
-<li>Cook both sides until golden brown.</li>
-<li>Serve hot with curry or chutney.</li>
+<li>Boil the milk in a pan.</li>
+<li>Add sugar and stir well.</li>
+<li>Add crushed almonds and pistachios.</li>
+<li>Add cardamom powder and saffron.</li>
+<li>Simmer for 3–5 minutes.</li>
+<li>Pour into a glass and serve hot or chilled.</li>
 
 </ol>
 
 </div>
 
 </div>
-</div>
 
 <script>
 
 function showSteps(){
 
-var steps=document.getElementById("steps");
+let steps = document.getElementById("steps");
 
-if(steps.style.display==="none"){
-steps.style.display="block";
+if(steps.style.display === "none"){
+    steps.style.display = "block";
 }else{
-steps.style.display="none";
+    steps.style.display = "none";
 }
 
 }
