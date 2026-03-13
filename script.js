@@ -1,12 +1,14 @@
-// Simple animation for menu sections
+function changeMessage(){
 
-let sections = document.querySelectorAll(".menu-section");
+    const messages = [
+        "Have a wonderful day!",
+        "May all your dreams come true!",
+        "Stay happy and keep smiling!",
+        "Wishing you success and joy!",
+        "You are amazing!"
+    ];
 
-sections.forEach((section, index) => {
-    section.style.opacity = 0;
+    let random = Math.floor(Math.random() * messages.length);
 
-    setTimeout(() => {
-        section.style.transition = "1s";
-        section.style.opacity = 1;
-    }, index * 500);
-});
+    document.getElementById("message").innerText = messages[random];
+}
