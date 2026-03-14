@@ -2,61 +2,54 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Masala Milk Recipe</title>
+<title>Mulappicha Muthira Thoran Recipe</title>
 
 <style>
 body{
     font-family: Arial, sans-serif;
-    background: #fff5e6;
+    background:#f8f9fa;
+    text-align:center;
     margin:0;
-    padding:0;
 }
 
 .container{
-    width: 60%;
-    margin: auto;
-    margin-top:40px;
+    width:80%;
+    margin:auto;
     background:white;
-    padding:30px;
-    border-radius:10px;
+    padding:20px;
     box-shadow:0 0 10px rgba(0,0,0,0.2);
 }
 
 h1{
-    text-align:center;
-    color:#b5651d;
+    color:#b22222;
 }
 
-h2{
-    color:#444;
+img{
+    width:400px;
+    border-radius:10px;
 }
 
-ul,ol{
-    margin-left:20px;
+.section{
+    text-align:left;
+    margin-top:20px;
 }
 
 button{
     padding:10px 20px;
-    background:#ff9800;
-    border:none;
+    background:#28a745;
     color:white;
-    font-size:16px;
+    border:none;
     border-radius:5px;
     cursor:pointer;
 }
 
 button:hover{
-    background:#e68900;
+    background:#1e7e34;
 }
 
 #steps{
     display:none;
-    margin-top:20px;
-}
-
-img{
-    width:100%;
-    border-radius:10px;
+    margin-top:10px;
 }
 </style>
 </head>
@@ -65,56 +58,53 @@ img{
 
 <div class="container">
 
-<h1>🥛 Masala Milk Recipe</h1>
+<h1>Mulappicha Muthira Thoran</h1>
 
-<img src="https://maayeka.com/wp-content/uploads/2024/01/1-masala-milk-masala-doodh-recipe-1-of-1.jpg">
+<img src="https://i.ytimg.com/vi/4quZfBBvXmI/maxresdefault.jpg" alt="Mulappicha Muthira Thoran">
 
+<div class="section">
 <h2>Ingredients</h2>
-
 <ul>
-<li>2 cups Milk</li>
-<li>1 tbsp Sugar</li>
-<li>4 Almonds (Badam)</li>
-<li>4 Pistachios</li>
-<li>1/4 tsp Cardamom powder</li>
-<li>A pinch of Saffron</li>
-<li>A pinch of Turmeric (optional)</li>
+<li>1 cup sprouted horse gram (Muthira)</li>
+<li>1/2 cup grated coconut</li>
+<li>2 dried red chillies</li>
+<li>1 tsp mustard seeds</li>
+<li>1 sprig curry leaves</li>
+<li>1 small onion (chopped)</li>
+<li>1/2 tsp turmeric powder</li>
+<li>Salt to taste</li>
+<li>2 tbsp coconut oil</li>
 </ul>
+</div>
 
-<button onclick="showSteps()">Show Recipe Steps</button>
+<div class="section">
+<h2>Cooking Steps</h2>
+<button onclick="showSteps()">Show Recipe</button>
 
-<div id="steps">
-
-<h2>Preparation Steps</h2>
-
-<ol>
-<li>Boil the milk in a pan.</li>
-<li>Add sugar and stir well.</li>
-<li>Add crushed almonds and pistachios.</li>
-<li>Add cardamom powder and saffron.</li>
-<li>Simmer for 3–5 minutes.</li>
-<li>Pour into a glass and serve hot or chilled.</li>
-
+<ol id="steps">
+<li>Heat coconut oil in a pan.</li>
+<li>Add mustard seeds and let them splutter.</li>
+<li>Add red chillies, curry leaves, and chopped onion.</li>
+<li>Sauté until onion becomes soft.</li>
+<li>Add sprouted horse gram and turmeric powder.</li>
+<li>Cook for 5–7 minutes.</li>
+<li>Add grated coconut and mix well.</li>
+<li>Cook for 2 minutes and serve hot.</li>
 </ol>
-
 </div>
 
 </div>
 
 <script>
-
 function showSteps(){
+    var steps = document.getElementById("steps");
 
-let steps = document.getElementById("steps");
-
-if(steps.style.display === "none"){
-    steps.style.display = "block";
-}else{
-    steps.style.display = "none";
+    if(steps.style.display === "none"){
+        steps.style.display = "block";
+    }else{
+        steps.style.display = "none";
+    }
 }
-
-}
-
 </script>
 
 </body>
