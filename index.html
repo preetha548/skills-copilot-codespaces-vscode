@@ -1,125 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<title>Write A to Z Worksheet</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>STEAM APP</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="logo-shop">
+          <img
+            src="https://store.cloudflare.steamstatic.com/public/shared/images/header/logo_steam.svg?t=962016"
+            alt="avtar"
+          />
+        </div>
+        <div class="nav-bar">
+          <a href="#">Store</a>
+          <a href="#">Community</a>
+          <a href="#">Support</a>
+        </div>
+      </div>
+      <div class="main">
+        <div class="search-tool">
+          <div class="search-container">
+            <div class="search-key">
+              <input
+                type="text"
+                id="search-game"
+                name="search-game"
+                placeholder="Search..."
+              />
+            </div>
+            <div class="icon-search">
+              <img
+                src="https://store.cloudflare.steamstatic.com/public/images/v6/search_icon_btn.png"
+                alt="icon-seacrh"
+                onclick="getAllGame()"
+              />
+            </div>
+          </div>
+          <div class="category-filter">
+            <h3>Category</h3>
+            <div id="category-game"></div>
+          </div>
+        </div>
+        <div class="list-game">
+          <div id="games"></div>
 
-<style>
-
-body{
-font-family: Arial, sans-serif;
-background:#f4f4f4;
-display:flex;
-justify-content:center;
-align-items:center;
-height:100vh;
-}
-
-.container{
-width:900px;
-background:white;
-padding:30px;
-border:5px dashed #7b61ff;
-border-radius:15px;
-text-align:center;
-}
-
-.top{
-display:flex;
-justify-content:space-between;
-margin-bottom:20px;
-font-size:18px;
-}
-
-.title{
-font-size:28px;
-font-weight:bold;
-margin-bottom:10px;
-}
-
-.subtitle{
-font-size:18px;
-color:#444;
-margin-bottom:40px;
-}
-
-.grid{
-display:grid;
-grid-template-columns:repeat(6,1fr);
-gap:20px;
-justify-items:center;
-}
-
-.box{
-width:90px;
-height:90px;
-border:2px solid #aaa;
-border-radius:6px;
-box-shadow:4px 4px 8px rgba(0,0,0,0.2);
-font-size:40px;
-text-align:center;
-}
-
-.last-row{
-display:flex;
-justify-content:center;
-gap:20px;
-margin-top:20px;
-}
-
-.footer{
-margin-top:30px;
-font-size:14px;
-color:#555;
-}
-
-</style>
-</head>
-
-<body>
-
-<div class="container">
-
-<div class="top">
-<div>Name: __________________</div>
-<div>Date: __________________</div>
-</div>
-
-<div class="title">Write The Letters A to Z</div>
-<div class="subtitle">Write the letters from a to z in sequence.</div>
-
-<div class="grid" id="grid"></div>
-
-<div class="last-row" id="lastRow"></div>
-
-<div class="footer">
-Visit coloringonly.com for free coloring pages, printables and educational games.
-</div>
-
-</div>
-
-<script>
-
-const grid = document.getElementById("grid");
-const lastRow = document.getElementById("lastRow");
-
-// first 24 boxes
-for(let i=0;i<24;i++){
-let input=document.createElement("input");
-input.className="box";
-input.maxLength=1;
-grid.appendChild(input);
-}
-
-// last 2 boxes
-for(let i=0;i<2;i++){
-let input=document.createElement("input");
-input.className="box";
-input.maxLength=1;
-lastRow.appendChild(input);
-}
-
-</script>
-
-</body>
+          <div class="page-game">
+            <div id="backward" onclick="backward()"><< PREVIOUS PAGE</div>
+            <div id="forward" onclick="forward()">NEXT PAGE >></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="script.js"></script>
 </html>
