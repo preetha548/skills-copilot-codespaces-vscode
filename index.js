@@ -1,15 +1,19 @@
-const source = document.getElementById("source");
+import FingerprintJS from '@fingerprintjs/fingerprintjs';
 
-source.addEventListener("cut", function (event) {
-  const selection = document.getSelection().toString();
+(async () => {
+	// We recommend to call `load` at application startup.
+	const fp = await FingerprintJS.load();
 
-  // Put modified text into clipboard
-  event.clipboardData.setData("text/plain", selection.toLowerCase());
+	// The FingerprintJS agent is ready.
+	// Get a visitor identifier when you'd like to.
+	const result = await fp.get();
 
-  // Prevent default cut behavior
-  event.preventDefault();
+	console.log(result);
 
-  // Remove selected text manually
-  document.getSelection().deleteFromDocument();
-});
+	// This is the visitor identifier:
+	const visitorId = result.visitorId;
 
+	document.getElementById('visitor-id').innerHTML = visitorId;
+
+	console.log(visitorId);
+})();
